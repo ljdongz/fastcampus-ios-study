@@ -44,6 +44,7 @@
 		12F0E9522A8C89A000773BAD /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E9512A8C89A000773BAD /* NotificationService.swift */; };
 		12F3EA0F2AA70ACF00944994 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F3EA0E2AA70ACF00944994 /* Color+Extensions.swift */; };
 		12FE29272A9C67F000142894 /* WriteBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FE29262A9C67F000142894 /* WriteBtn.swift */; };
+		57823C422B10861500162230 /* TestOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57823C412B10861500162230 /* TestOnboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		12F0E9512A8C89A000773BAD /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		12F3EA0E2AA70ACF00944994 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		12FE29262A9C67F000142894 /* WriteBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteBtn.swift; sourceTree = "<group>"; };
+		57823C412B10861500162230 /* TestOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOnboardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +296,7 @@
 			children = (
 				12E7D5172A8B2D2E00A77193 /* OnboardingView.swift */,
 				12E7D5192A8B2D6700A77193 /* OnboardingViewModel.swift */,
+				57823C412B10861500162230 /* TestOnboardingView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				129E95A12A8C50FE0066B43A /* Memo.swift in Sources */,
 				121221322A8CCF3A00C57015 /* Double+Extensions.swift in Sources */,
 				12E7D52E2A8B2DB600A77193 /* SettingView.swift in Sources */,
+				57823C422B10861500162230 /* TestOnboardingView.swift in Sources */,
 				12E7D5412A8B491400A77193 /* MemoView.swift in Sources */,
 				12E7D52C2A8B2DB100A77193 /* TimerViewModel.swift in Sources */,
 				12E7D53E2A8B489B00A77193 /* TodoViewModel.swift in Sources */,
