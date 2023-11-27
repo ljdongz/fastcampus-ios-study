@@ -9,10 +9,27 @@ import SwiftUI
 
 struct TestOnboardingView: View {
     
+    @StateObject var pathModel = PathModel()
     @StateObject var viewModel = OnboardingViewModel()
     
     var body: some View {
-        OnboardingContentListView(viewModel: viewModel)
+        NavigationStack(path: $pathModel.paths) {
+            OnboardingContentListView(viewModel: viewModel)
+                .navigationDestination(for: PathType.self) { path in
+                    switch path {
+                    case .homeView:
+                        HomeView()
+                            .navigationBarBackButtonHidden()
+                    case .todoView:
+                        TodoView()
+                            .navigationBarBackButtonHidden()
+                    case .memoView:
+                        MemoView()
+                            .navigationBarBackButtonHidden()
+                    }
+                }
+        }
+        .environmentObject(pathModel)
     }
 }
 
@@ -40,6 +57,8 @@ private struct OnboardingContentListView: View {
 }
 
 private struct OnboardingContentView: View {
+    
+    @EnvironmentObject private var pathModel: PathModel
     
     private var onboardingContent: OnboardingContent
     
@@ -74,7 +93,7 @@ private struct OnboardingContentView: View {
                         .frame(height: 50)
                     
                     Button(action: {
-                        
+                        pathModel.paths.append(.homeView)
                     }, label: {
                         Text("시작하기")
                             .font(.system(size: 16, weight: .medium))
