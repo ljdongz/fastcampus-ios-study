@@ -6,13 +6,13 @@
 import SwiftUI
 
 struct TodoListView: View {
-  var body: some View {
-    Text("Todo List")
-  }
+    var body: some View {
+        Text("Todo List")
+    }
 }
 
 struct TodoListView_Previews: PreviewProvider {
-  static var previews: some View {
-    TodoListView()
-  }
+    static var previews: some View {
+        TodoListView()
+    }
 }
