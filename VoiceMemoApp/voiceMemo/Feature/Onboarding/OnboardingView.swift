@@ -7,7 +7,7 @@ import SwiftUI
 
 struct OnboardingView: View {
     @StateObject var pathModel = PathModel()
-    @ObservedObject private var onboardingViewModel = OnboardingViewModel()
+    @StateObject private var onboardingViewModel = OnboardingViewModel()
     
     var body: some View {
         NavigationStack(path: $pathModel.paths) {
@@ -27,6 +27,10 @@ struct OnboardingView: View {
                 }
         }
         .environmentObject(pathModel)
+        /*
+         HomeView, TodoView, MemoView에서 동일한 상태의 PathModel을 사용해야 하기 때문에,
+         EnvironmentObject로 전달해줌
+         */
     }
 }
 

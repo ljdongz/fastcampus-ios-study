@@ -5,7 +5,7 @@
 
 import Foundation
 
-class TodoListViewModel: ObservableObject{
+class TodoListViewModel: ObservableObject {
     
     @Published var todos: [Todo]
     @Published var isEditTodoMode: Bool // 편집 모드 여부
