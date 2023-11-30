@@ -45,6 +45,7 @@
 		12F3EA0F2AA70ACF00944994 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F3EA0E2AA70ACF00944994 /* Color+Extensions.swift */; };
 		12FE29272A9C67F000142894 /* WriteBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FE29262A9C67F000142894 /* WriteBtn.swift */; };
 		57823C422B10861500162230 /* TestOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57823C412B10861500162230 /* TestOnboardingView.swift */; };
+		57823C442B18715E00162230 /* TestTodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57823C432B18715E00162230 /* TestTodoListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		12F3EA0E2AA70ACF00944994 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		12FE29262A9C67F000142894 /* WriteBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteBtn.swift; sourceTree = "<group>"; };
 		57823C412B10861500162230 /* TestOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestOnboardingView.swift; sourceTree = "<group>"; };
+		57823C432B18715E00162230 /* TestTodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTodoListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 				12E7D53A2A8B488B00A77193 /* Todo */,
 				12E7D51D2A8B2D7900A77193 /* ToodoListView.swift */,
 				12E7D51F2A8B2D8100A77193 /* TodoListViewModel.swift */,
+				57823C432B18715E00162230 /* TestTodoListView.swift */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				12E7D5182A8B2D2E00A77193 /* OnboardingView.swift in Sources */,
 				12E7D53C2A8B489300A77193 /* TodoView.swift in Sources */,
 				12E7D5222A8B2D8700A77193 /* MemoListView.swift in Sources */,
+				57823C442B18715E00162230 /* TestTodoListView.swift in Sources */,
 				129E95A12A8C50FE0066B43A /* Memo.swift in Sources */,
 				121221322A8CCF3A00C57015 /* Double+Extensions.swift in Sources */,
 				12E7D52E2A8B2DB600A77193 /* SettingView.swift in Sources */,

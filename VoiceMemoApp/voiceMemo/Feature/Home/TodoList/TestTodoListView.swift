@@ -1,69 +1,53 @@
 //
-//  ToodoListView.swift
+//  TestTodoListView.swift
 //  voiceMemo
+//
+//  Created by 이정동 on 11/30/23.
 //
 
 import SwiftUI
 
-struct TodoListView: View {
+struct TestTodoListView: View {
     
-    @EnvironmentObject private var pathModel: PathModel
-    
-    /*
-     <<< EnvironmentObject로 사용하는 이유 >>>
-     TodoView에서도 TodoListViewModel을 사용하는데, TodoListView의 하위 View로 사용되는 것이 아닌
-     독립적인 View로 사용되기 때문에, 전역적으로 상태를 공유하기 위함
-     */
     @EnvironmentObject private var todoListViewModel: TodoListViewModel
     
     var body: some View {
         ZStack {
-            // Todo Cell List
             VStack {
-                if !todoListViewModel.todos.isEmpty {
+                if todoListViewModel.todos.isEmpty {
                     CustomNavigationBar(
                         isDisplayLeftButton: false,
-                        isDisplayRightButton: true,
-                        rightButtonAction: {
-                            todoListViewModel.navigationRightButtonTapped()
-                        },
-                        rightButtonType: todoListViewModel.navigationBarRightButtonMode
+                        isDisplayRightButton: false
                     )
                 } else {
-                    Spacer()
-                        .frame(height: 30)
+                    CustomNavigationBar(
+                        isDisplayLeftButton: false,
+                        rightButtonAction: todoListViewModel.navigationRightButtonTapped,
+                        rightButtonType: todoListViewModel.navigationBarRightButtonMode
+                    )
                 }
                 
                 TitleView()
-                    .padding(.top, 20)
                 
                 if todoListViewModel.todos.isEmpty {
                     AnnouncementView()
                 } else {
-                    TodoListContentView()
+                    ContentListView()
                 }
-                
             }
             
             WriteTodoButtonView()
-                .padding(.bottom, 50)
                 .padding(.trailing, 20)
+                .padding(.bottom, 50)
         }
-        .alert(
-            "To do list \(todoListViewModel.removTodosCount)개 삭제하시겠습니까?",
-            isPresented: $todoListViewModel.isDisplayRemoveTodoAlert) {
-                Button("삭제", role: .destructive) {
-                    todoListViewModel.removeButtonTapped()
-                }
-                Button("취소", role: .cancel) {
-                }
-            }
+        
+        
     }
 }
 
 // MARK: - Todo List Title View
-
 private struct TitleView: View {
+    
     @EnvironmentObject private var todoListViewModel: TodoListViewModel
     
     fileprivate var body: some View {
@@ -76,15 +60,18 @@ private struct TitleView: View {
             Spacer()
         }
         .font(.system(size: 30, weight: .bold))
-        .padding(.leading, 20)
+        .padding(.horizontal, 20)
+        .padding(.top, 20)
     }
 }
 
 // MARK: - Todo List 안내 뷰
-
 private struct AnnouncementView: View {
+    
+    @EnvironmentObject private var todoListViewModel: TodoListViewModel
+    
     fileprivate var body: some View {
-        VStack(spacing: 15) {
+        VStack {
             Spacer()
             Image("pencil")
                 .renderingMode(.template)
@@ -93,69 +80,72 @@ private struct AnnouncementView: View {
             Text("“1시 반 점심약속 리마인드 해줘“")
             Spacer()
         }
-        .font(.system(size: 16))
         .foregroundStyle(Color.customGray2)
+        .font(.system(size: 16))
     }
 }
 
-// MARK: - Todo List 컨텐츠 뷰
+// MARK: - Todo List Content View
 
-private struct TodoListContentView: View {
+private struct ContentListView: View {
+    
     @EnvironmentObject private var todoListViewModel: TodoListViewModel
     
     fileprivate var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             HStack {
                 Text("할 일 목록")
                     .font(.system(size: 16, weight: .bold))
-                    .padding(.leading, 20)
                 Spacer()
             }
+            .padding(.leading, 20)
+            .padding(.top, 10)
             
             ScrollView(.vertical) {
                 VStack {
-                    Rectangle()
-                        .fill(Color.customGray0)
-                        .frame(height: 1)
+//                    Rectangle()
+//                        .fill(Color.customGray0)
+//                        .frame(height: 1)
+                    Divider()
                     
                     ForEach(todoListViewModel.todos, id: \.self) { todo in
-                        TodoCellView(todo: todo)
+                        ContentCellView(todo: todo)
                     }
                 }
+                
             }
+            
+            
+                
         }
-        .padding(.top, 20)
     }
 }
 
-// MARK: - Todo 셀 뷰
-
-private struct TodoCellView: View {
+// MARK: - Todo List Content Cell View
+private struct ContentCellView: View {
     
     @EnvironmentObject private var todoListViewModel: TodoListViewModel
-    @State private var isRemoveSelected: Bool
+    @State private var isRemoveSelected: Bool = false
     private var todo: Todo
     
-    init(
-        isRemoveSelected: Bool = false,
-        todo: Todo
-    ) {
-        _isRemoveSelected = State(initialValue: isRemoveSelected)
+    init(todo: Todo) {
         self.todo = todo
     }
     
-
-    
     fileprivate var body: some View {
-        
         HStack {
             if !todoListViewModel.isEditTodoMode {
-                Button(
-                    action: {
-                        todoListViewModel.selectedBoxTapped(todo)
-                    }, label: {
-                        todo.isSelected ? Image("selectedBox") : Image("unSelectedBox")
-                    })
+                Button(action: {
+                    /*
+                     버튼 클릭 시 todoListViewModel.todos 배열 내 특정 todo가 변경됨.
+                     todos는 property wrapper로 선언되있어 값이 변경됨에 따라 뷰를 다시 그림.
+                     todoListViewModel을 관찰하고 있는 모든 뷰가 다시 그려짐.
+                     따라서 todo 변수는 일반적인 인스턴스 변수로 선언이 되어있지만, 상위 뷰(ContentListView)가 업데이트 됨에 따라, ContentCellView의 값이 변경된 todo를 전달하면서 뷰가 그려짐
+                     */
+                    todoListViewModel.selectedBoxTapped(todo)
+                }, label: {
+                    todo.isSelected ? Image("selectedBox") : Image("unSelectedBox")
+                })
             }
             
             Spacer()
@@ -174,27 +164,21 @@ private struct TodoCellView: View {
             Spacer()
             
             if todoListViewModel.isEditTodoMode {
-                Button(
-                    action: {
-                        isRemoveSelected.toggle()
-                        todoListViewModel.todoRemoveSelectedBoxTapped(todo)
-                    }, label: {
-                        isRemoveSelected ? Image("selectedBox") : Image("unSelectedBox")
-                    }
-                )
+                Button(action: {
+                    isRemoveSelected.toggle()
+                }, label: {
+                    todo.isSelected ? Image("selectedBox") : Image("unSelectedBox")
+                })
             }
         }
-        .padding(.horizontal, 30)
-        .padding(.vertical, 20)
+        .padding(.horizontal, 20)
+        .padding(.vertical, 10)
         
-        Rectangle()
-            .fill(Color.customGray0)
-            .frame(height: 1)
+        Divider()
     }
 }
 
-// MARK: - Todo 작성 버튼 뷰
-
+// MARK: - Todo 작성 버튼
 private struct WriteTodoButtonView: View {
     
     @EnvironmentObject private var pathModel: PathModel
@@ -202,27 +186,21 @@ private struct WriteTodoButtonView: View {
     fileprivate var body: some View {
         VStack {
             Spacer()
-            
             HStack {
                 Spacer()
-                
-                Button(
-                    action: {
-                        pathModel.paths.append(.todoView)
-                    },
-                    label: {
-                        Image("writeBtn")
-                    })
+                Button(action: {
+                    
+                }, label: {
+                    Image("writeBtn")
+                })
             }
         }
     }
 }
 
-struct TodoListView_Previews: PreviewProvider {
-    static var previews: some View {
-        TodoListView()
-            .environmentObject(PathModel())
-            .environmentObject(TodoListViewModel(todos: [Todo(title: "Test", time: Date(), day: Date(), isSelected: false)]))
+#Preview {
+    TestTodoListView()
+        .environmentObject(PathModel())
+        .environmentObject(TodoListViewModel(todos: [Todo(title: "Test", time: Date(), day: Date(), isSelected: false)]))
 //            .environmentObject(TodoListViewModel())
-    }
 }
