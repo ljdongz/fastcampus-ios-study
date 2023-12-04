@@ -21,7 +21,7 @@ struct TestOnboardingView: View {
                         HomeView()
                             .navigationBarBackButtonHidden()
                     case .todoView:
-                        TodoView()
+                        TestTodoView()
                             .navigationBarBackButtonHidden()
                     case .memoView:
                         MemoView()

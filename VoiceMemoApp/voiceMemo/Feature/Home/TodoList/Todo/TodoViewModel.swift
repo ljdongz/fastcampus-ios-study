@@ -8,7 +8,7 @@ import Foundation
 class TodoViewModel: ObservableObject {
     @Published var title: String
     @Published var time: Date
-    @Published var date: Date
+    @Published var day: Date
     @Published var isDisplayCalendar: Bool
     
     init(
@@ -19,7 +19,7 @@ class TodoViewModel: ObservableObject {
     ) {
         self.title = title
         self.time = time
-        self.date = date
+        self.day = date
         self.isDisplayCalendar = isDisplayCalendar
     }
 }

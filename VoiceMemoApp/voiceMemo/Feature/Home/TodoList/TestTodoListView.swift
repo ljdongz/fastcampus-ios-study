@@ -189,7 +189,7 @@ private struct WriteTodoButtonView: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    
+                    pathModel.paths.append(.todoView)
                 }, label: {
                     Image("writeBtn")
                 })

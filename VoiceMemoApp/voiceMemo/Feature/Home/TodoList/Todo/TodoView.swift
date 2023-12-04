@@ -21,7 +21,7 @@ struct TodoView: View {
                         .init(
                             title: todoViewModel.title,
                             time: todoViewModel.time,
-                            day: todoViewModel.date,
+                            day: todoViewModel.day,
                             isSelected: false
                         )
                     )
@@ -56,7 +56,6 @@ struct TodoView: View {
 
 // MARK: - Title View
 private struct TitleView: View {
-    @EnvironmentObject private var todoListViewModel: TodoListViewModel
     
     fileprivate var body: some View {
         HStack {
@@ -133,7 +132,7 @@ private struct TodoDayView: View {
                         todoViewModel.setIsDisplayCalendar(true)
                     },
                     label: {
-                        Text("\(todoViewModel.date.formattedDay)")
+                        Text("\(todoViewModel.day.formattedDay)")
                             .font(.system(size: 18, weight: .medium))
                             .foregroundStyle(Color.customGreen)
                     }
@@ -141,12 +140,12 @@ private struct TodoDayView: View {
                 .popover(
                     isPresented: $todoViewModel.isDisplayCalendar,
                     content: {
-                        DatePicker("", selection: $todoViewModel.date, displayedComponents: [.date])
+                        DatePicker("", selection: $todoViewModel.day, displayedComponents: [.date])
                             .labelsHidden()
                             .datePickerStyle(.graphical)
                             .frame(maxWidth: .infinity, alignment: .center)
                             .padding()
-                            .onChange(of: todoViewModel.date) { _ in
+                            .onChange(of: todoViewModel.day) { _ in
                                 // 날짜가 선택되면(todoViewModel.day 값이 변경되면) 동작
                                 todoViewModel.setIsDisplayCalendar(false)
                             }
