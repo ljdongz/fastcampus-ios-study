@@ -8,10 +8,13 @@ import SwiftUI
 struct OnboardingView: View {
     @StateObject var pathModel = PathModel()
     @StateObject private var onboardingViewModel = OnboardingViewModel()
+    @StateObject private var todoListViewModel = TodoListViewModel()
+    @StateObject private var memoListViewModel = MemoListViewModel()
     
     var body: some View {
         NavigationStack(path: $pathModel.paths) {
-            OnboardingContentView(onboardingViewModel: onboardingViewModel)
+            //OnboardingContentView(onboardingViewModel: onboardingViewModel)
+            MemoListView()
                 .navigationDestination(for: PathType.self) { pathType in
                     switch pathType {
                     case .homeView:
@@ -20,13 +23,22 @@ struct OnboardingView: View {
                     case .todoView:
                         TodoView()
                             .navigationBarBackButtonHidden()
-                    case .memoView:
-                        MemoView()
-                            .navigationBarBackButtonHidden()
+                    case let .memoView(isCreateMode, memo):
+                        MemoView(
+                            memoViewModel:
+                                MemoViewModel(
+                                    memo: isCreateMode
+                                    ? Memo(title: "", content: "", date: .now)
+                                    : memo ?? Memo(title: "", content: "", date: .now)
+                                ),
+                            isCreateMode: isCreateMode
+                        )
+                        .navigationBarBackButtonHidden()
                     }
                 }
         }
         .environmentObject(pathModel)
+        .environmentObject(memoListViewModel)
         /*
          HomeView, TodoView, MemoView에서 동일한 상태의 PathModel을 사용해야 하기 때문에,
          EnvironmentObject로 전달해줌

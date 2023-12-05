@@ -17,7 +17,7 @@ struct MemoListView: View {
                     CustomNavigationBar(
                         isDisplayLeftButton: false,
                         rightButtonAction: {
-                            memoListViewModel.isEditMemoMode.toggle()
+                            memoListViewModel.navigationRightButtonTapped()
                         },
                         rightButtonType: memoListViewModel.navigationBarRightButtonMode
                     )
@@ -50,9 +50,11 @@ struct MemoListView: View {
         }
         .alert("메모 \(memoListViewModel.removeMemoCount)개 삭제하시겠습니까?", isPresented: $memoListViewModel.isDisplayRemoveMemoAlert) {
             Button("삭제", role: .destructive) {
+                memoListViewModel.removeButtonTapped()
+            }
+            Button("취소", role: .cancel) {
                 
             }
-            Button("취소", role: .cancel) {}
         }
     }
 }
@@ -136,7 +138,9 @@ private struct MemoContentCellView: View {
     
     fileprivate var body: some View {
         Button(
-            action: {},
+            action: {
+                pathModel.paths.append(.memoView(isCreateMode: false, memo: memo))
+            },
             label: {
                 VStack(spacing: 0) {
                     HStack {
@@ -183,7 +187,9 @@ private struct WriteMemoButton: View {
             HStack {
                 Spacer()
                 Button(
-                    action: {},
+                    action: {
+                        pathModel.paths.append(.memoView(isCreateMode: true, memo: nil))
+                    },
                     label: {
                     Image("writeBtn")
                 })
@@ -196,7 +202,11 @@ struct MemoListView_Previews: PreviewProvider {
     static var previews: some View {
         MemoListView()
             .environmentObject(MemoListViewModel(
-                memos: [Memo(title: "1", content: "1", date: Date())]
+                memos: [
+                    Memo(title: "1", content: "1", date: Date()),
+                    Memo(title: "1", content: "1", date: Date()),
+                    Memo(title: "1", content: "1", date: Date()),
+                ]
             ))
             .environmentObject(PathModel())
     }
