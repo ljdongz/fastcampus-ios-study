@@ -79,10 +79,10 @@ extension MemoListViewModel {
         isEditMemoMode = false
     }
     
-    func resetRemoveSelected() {
-        for index in memos.indices {
-            memos[index].isRemoveSelected = false
-        }
-        removeMemos.removeAll()
-    }
+//    func resetRemoveSelected() {
+//        for index in memos.indices {
+//            memos[index].isRemoveSelected = false
+//        }
+//        removeMemos.removeAll()
+//    }
 }

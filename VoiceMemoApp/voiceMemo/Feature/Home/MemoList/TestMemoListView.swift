@@ -47,6 +47,16 @@ struct TestMemoListView: View {
                 .padding(.trailing, 20)
                 .padding(.bottom, 50)
         }
+        .alert(
+            "\(memoListViewModel.removeMemoCount)개를 삭제하시겠습니까?",
+            isPresented: $memoListViewModel.isDisplayRemoveMemoAlert) {
+                Button("삭제", role: .destructive) {
+                    memoListViewModel.removeButtonTapped()
+                }
+                Button("취소", role: .cancel) {
+                    
+                }
+            }
     }
 }
 
@@ -121,31 +131,39 @@ private struct MemoContentCellView: View {
     }
     
     fileprivate var body: some View {
-        VStack(spacing: 0) {
-            HStack {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("\(memo.title)")
-                    Text("\(memo.content)")
-                }
-                
-                Spacer()
-                
-                Button(
-                    action: {
-                        isRemoveSelected.toggle()
-                        memoListViewModel.memoRemoveSelectedBoxTapped(memo)
-                    },
-                    label: {
-                        if memoListViewModel.isEditMemoMode {
-                            isRemoveSelected ? Image("selectedBox") : Image("unSelectedBox")
+        Button(
+            action: {
+                pathModel.paths.append(.memoView(isCreateMode: false, memo: memo))
+            },
+            label: {
+                VStack(spacing: 0) {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text("\(memo.title)")
+                            Text("\(memo.content)")
                         }
-                })
-                
-            }
-            .padding(20)
-            
-            Divider()
-        }
+                        .foregroundStyle(Color.customBlack)
+                        
+                        Spacer()
+                        
+                        Button(
+                            action: {
+                                isRemoveSelected.toggle()
+                                memoListViewModel.memoRemoveSelectedBoxTapped(memo)
+                            },
+                            label: {
+                                if memoListViewModel.isEditMemoMode {
+                                    isRemoveSelected ? Image("selectedBox") : Image("unSelectedBox")
+                                }
+                        })
+                        
+                    }
+                    .padding(20)
+                    
+                    Divider()
+                }
+        })
+        
     }
 }
 
@@ -159,7 +177,12 @@ private struct MemoWriteButtonView: View {
             HStack {
                 Spacer()
                 Button(
-                    action: {},
+                    action: {
+                        pathModel.paths.append(.memoView(
+                            isCreateMode: true,
+                            memo: nil)
+                        )
+                    },
                     label: {
                     Image("writeBtn")
                 })
