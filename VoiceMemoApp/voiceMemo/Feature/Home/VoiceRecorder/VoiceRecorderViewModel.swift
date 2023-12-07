@@ -82,6 +82,7 @@ extension VoiceRecorderViewModel {
         setIsDisplayRemoveVoiceRecorderAlert(true)
     }
     
+    /// 삭제 Alert 화면에서 삭제 버튼 동작
     func removeSelectedVoiceRecord() {
         guard let fileToRemove = selectedRecoredFile,
               let indexToRemove = recordedFiles.firstIndex(of: fileToRemove) else {
