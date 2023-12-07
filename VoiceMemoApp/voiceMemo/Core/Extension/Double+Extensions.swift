@@ -6,5 +6,12 @@
 import Foundation
 
 extension Double {
-  
+    // 03:01
+    var formattedTimeInterval: String {
+        let totalSeconds = Int(self)
+        let seconds = totalSeconds % 60
+        let minuts = (totalSeconds / 60) % 60
+        
+        return String(format: "%02d:%02d", minuts, seconds)
+    }
 }
