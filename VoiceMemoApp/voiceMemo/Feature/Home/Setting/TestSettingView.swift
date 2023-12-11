@@ -85,10 +85,10 @@ private struct MenuNavigationView: View {
     
     fileprivate var body: some View {
         VStack {
-            MenuView(title: "To do 리스트")
-            MenuView(title: "메모")
-            MenuView(title: "음성메모")
-            MenuView(title: "타이머")
+            MenuView(title: "To do 리스트") {}
+            MenuView(title: "메모") {}
+            MenuView(title: "음성메모") {}
+            MenuView(title: "타이머") {}
         }
     }
 }
@@ -96,24 +96,32 @@ private struct MenuNavigationView: View {
 // MARK: - 메뉴 뷰
 private struct MenuView: View {
     private var title: String
+    private var tabAction: () -> Void
     
-    fileprivate init(title: String) {
+    fileprivate init(title: String, tabAction: @escaping () -> Void) {
         self.title = title
+        self.tabAction = tabAction
     }
     
     fileprivate var body: some View {
-        HStack {
-            Text(title)
-            Spacer()
-            Image("arrowRight")
-                .renderingMode(.template)
-                .resizable()
-                .frame(width: 30, height: 30)
-                .foregroundStyle(Color.customIconGray)
-        }
+        Button(
+            action: { tabAction() },
+            label: {
+                HStack {
+                    Text(title)
+                    Spacer()
+                    Image("arrowRight")
+                        .renderingMode(.template)
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundStyle(Color.customIconGray)
+                }
+        })
         .font(.system(size: 16, weight: .medium))
+        .foregroundStyle(Color.customBlack)
         .padding(.horizontal, 20)
         .padding(.vertical, 10)
+        
     }
 }
 
