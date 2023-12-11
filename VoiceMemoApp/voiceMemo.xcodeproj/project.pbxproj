@@ -44,6 +44,7 @@
 		12F0E9522A8C89A000773BAD /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F0E9512A8C89A000773BAD /* NotificationService.swift */; };
 		12F3EA0F2AA70ACF00944994 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F3EA0E2AA70ACF00944994 /* Color+Extensions.swift */; };
 		12FE29272A9C67F000142894 /* WriteBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FE29262A9C67F000142894 /* WriteBtn.swift */; };
+		570BB6472B24C19A00E79A70 /* TestSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570BB6462B24C19A00E79A70 /* TestSettingView.swift */; };
 		5747B2672B2197BC00FBC4A0 /* TestVoiceRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5747B2662B2197BC00FBC4A0 /* TestVoiceRecorderView.swift */; };
 		5747B26B2B2201AB00FBC4A0 /* TestTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5747B26A2B2201AB00FBC4A0 /* TestTimerView.swift */; };
 		577D57EA2B1DA4DC00A948F5 /* TestTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D57E92B1DA4DC00A948F5 /* TestTodoView.swift */; };
@@ -92,6 +93,7 @@
 		12F0E9512A8C89A000773BAD /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		12F3EA0E2AA70ACF00944994 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		12FE29262A9C67F000142894 /* WriteBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteBtn.swift; sourceTree = "<group>"; };
+		570BB6462B24C19A00E79A70 /* TestSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSettingView.swift; sourceTree = "<group>"; };
 		5747B2662B2197BC00FBC4A0 /* TestVoiceRecorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVoiceRecorderView.swift; sourceTree = "<group>"; };
 		5747B26A2B2201AB00FBC4A0 /* TestTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTimerView.swift; sourceTree = "<group>"; };
 		577D57E92B1DA4DC00A948F5 /* TestTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTodoView.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				12E7D52D2A8B2DB600A77193 /* SettingView.swift */,
+				570BB6462B24C19A00E79A70 /* TestSettingView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				12E7D52A2A8B2DAC00A77193 /* TimerView.swift in Sources */,
 				129E959C2A8B9B480066B43A /* CustomNavigationBar.swift in Sources */,
 				12F0E94C2A8C832100773BAD /* Time.swift in Sources */,
+				570BB6472B24C19A00E79A70 /* TestSettingView.swift in Sources */,
 				123539982A8C82D900224592 /* Int+Extensions.swift in Sources */,
 				12F0E94E2A8C869600773BAD /* AppDelegate.swift in Sources */,
 				5747B26B2B2201AB00FBC4A0 /* TestTimerView.swift in Sources */,
@@ -622,7 +626,7 @@
 				DEVELOPMENT_TEAM = 5DFZR8RCQR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = voiceMemo/Info.plist;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "마이크 권한 접근";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -655,7 +659,7 @@
 				DEVELOPMENT_TEAM = 5DFZR8RCQR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = voiceMemo/Info.plist;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "마이크 권한 접근";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
