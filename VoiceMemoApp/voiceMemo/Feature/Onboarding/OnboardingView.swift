@@ -13,8 +13,7 @@ struct OnboardingView: View {
     
     var body: some View {
         NavigationStack(path: $pathModel.paths) {
-            //OnboardingContentView(onboardingViewModel: onboardingViewModel)
-            MemoListView()
+            OnboardingContentView(onboardingViewModel: onboardingViewModel)
                 .navigationDestination(for: PathType.self) { pathType in
                     switch pathType {
                     case .homeView:
@@ -39,6 +38,7 @@ struct OnboardingView: View {
         }
         .environmentObject(pathModel)
         .environmentObject(memoListViewModel)
+        .environmentObject(todoListViewModel)
         /*
          HomeView, TodoView, MemoView에서 동일한 상태의 PathModel을 사용해야 하기 때문에,
          EnvironmentObject로 전달해줌

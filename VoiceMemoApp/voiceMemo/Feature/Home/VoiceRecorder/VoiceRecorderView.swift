@@ -7,11 +7,17 @@ import SwiftUI
 
 struct VoiceRecorderView: View {
     
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     @StateObject private var voiceRecorderViewModel = VoiceRecorderViewModel()
     
     var body: some View {
         ZStack {
             VStack {
+                CustomNavigationBar(
+                    isDisplayLeftButton: false,
+                    isDisplayRightButton: false
+                )
+                
                 // 타이틀 뷰
                 TitleView()
                 
@@ -47,6 +53,10 @@ struct VoiceRecorderView: View {
         .onAppear(perform: {
             voiceRecorderViewModel.requestAudioPermission()
         })
+        .onChange(of: voiceRecorderViewModel.recordedFiles) { files in
+            homeViewModel.setVoiceRecordersCount(files.count)
+        }
+        
     }
 }
 

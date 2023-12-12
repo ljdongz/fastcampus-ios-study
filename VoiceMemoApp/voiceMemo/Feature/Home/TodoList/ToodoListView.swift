@@ -8,6 +8,7 @@ import SwiftUI
 struct TodoListView: View {
     
     @EnvironmentObject private var pathModel: PathModel
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     
     /*
      <<< EnvironmentObject로 사용하는 이유 >>>
@@ -17,47 +18,49 @@ struct TodoListView: View {
     @EnvironmentObject private var todoListViewModel: TodoListViewModel
     
     var body: some View {
-        ZStack {
-            // Todo Cell List
-            VStack {
-                if !todoListViewModel.todos.isEmpty {
-                    CustomNavigationBar(
-                        isDisplayLeftButton: false,
-                        isDisplayRightButton: true,
-                        rightButtonAction: {
-                            todoListViewModel.navigationRightButtonTapped()
-                        },
-                        rightButtonType: todoListViewModel.navigationBarRightButtonMode
-                    )
-                } else {
-                    Spacer()
-                        .frame(height: 30)
-                }
-                
-                TitleView()
-                    .padding(.top, 20)
-                
-                if todoListViewModel.todos.isEmpty {
-                    AnnouncementView()
-                } else {
-                    TodoListContentView()
-                }
-                
+        
+        // Todo Cell List
+        VStack {
+            if !todoListViewModel.todos.isEmpty {
+                CustomNavigationBar(
+                    isDisplayLeftButton: false,
+                    isDisplayRightButton: true,
+                    rightButtonAction: {
+                        todoListViewModel.navigationRightButtonTapped()
+                    },
+                    rightButtonType: todoListViewModel.navigationBarRightButtonMode
+                )
+            } else {
+                Spacer()
+                    .frame(height: 30)
             }
             
-            WriteTodoButtonView()
-                .padding(.bottom, 50)
-                .padding(.trailing, 20)
+            TitleView()
+                .padding(.top, 20)
+            
+            if todoListViewModel.todos.isEmpty {
+                AnnouncementView()
+            } else {
+                TodoListContentView()
+            }
+            
         }
+        .modifier(WriteButtonViewModifier(action: {
+            pathModel.paths.append(.todoView)
+        }))
         .alert(
             "To do list \(todoListViewModel.removTodosCount)개 삭제하시겠습니까?",
-            isPresented: $todoListViewModel.isDisplayRemoveTodoAlert) {
-                Button("삭제", role: .destructive) {
-                    todoListViewModel.removeButtonTapped()
-                }
-                Button("취소", role: .cancel) {
-                }
+            isPresented: $todoListViewModel.isDisplayRemoveTodoAlert
+        ) {
+            Button("삭제", role: .destructive) {
+                todoListViewModel.removeButtonTapped()
             }
+            Button("취소", role: .cancel) {
+            }
+        }
+        .onChange(of: todoListViewModel.todos) { todos in
+            homeViewModel.setTodosCount(todos.count)
+        }
     }
 }
 
@@ -144,7 +147,7 @@ private struct TodoCellView: View {
         self.todo = todo
     }
     
-
+    
     
     fileprivate var body: some View {
         
@@ -223,6 +226,6 @@ struct TodoListView_Previews: PreviewProvider {
         TodoListView()
             .environmentObject(PathModel())
             .environmentObject(TodoListViewModel(todos: [Todo(title: "Test", time: Date(), day: Date(), isSelected: false)]))
-//            .environmentObject(TodoListViewModel())
+        //            .environmentObject(TodoListViewModel())
     }
 }

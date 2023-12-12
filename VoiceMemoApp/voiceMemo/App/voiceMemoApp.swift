@@ -11,10 +11,7 @@ struct voiceMemoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            //TestOnboardingView()
-            //OnboardingView()
-            //VoiceRecorderView()
-            TimerView()
+            OnboardingView()
         }
     }
 }

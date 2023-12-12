@@ -6,8 +6,15 @@
 import SwiftUI
 
 struct SettingView: View {
+    @EnvironmentObject private var homeViewModel: HomeViewModel
+    
     var body: some View {
         VStack {
+            CustomNavigationBar(
+                isDisplayLeftButton: false,
+                isDisplayRightButton: false
+            )
+            
             // 타이틀 뷰
             TitleView()
             
@@ -45,17 +52,18 @@ private struct TitleView: View {
 
 // MARK: - 전테 탭 카운트 뷰
 private struct TotalTabCountView: View {
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     
     fileprivate var body: some View {
         HStack {
             Spacer()
-            TabCountView(title: "To do", count: 1)
+            TabCountView(title: "To do", count: homeViewModel.todosCount)
             Spacer()
                 .frame(width: 70)
-            TabCountView(title: "메모", count: 2)
+            TabCountView(title: "메모", count: homeViewModel.memosCount)
             Spacer()
                 .frame(width: 70)
-            TabCountView(title: "음성메모", count: 3)
+            TabCountView(title: "음성메모", count: homeViewModel.voiceRecordersCount)
             Spacer()
         }
         
@@ -87,25 +95,26 @@ private struct TabCountView: View {
 
 // MARK: - 전체 탭 이동 뷰
 private struct TotalTabNavigationView: View {
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     
     fileprivate var body: some View {
         VStack {
             Divider()
             
             TabNavigationView(title: "To do List") {
-                
+                homeViewModel.changeSelectedTab(.todoList)
             }
             
             TabNavigationView(title: "메모장") {
-                
+                homeViewModel.changeSelectedTab(.memo)
             }
             
             TabNavigationView(title: "음성메모") {
-                
+                homeViewModel.changeSelectedTab(.voiceRecorder)
             }
             
             TabNavigationView(title: "타이머") {
-                
+                homeViewModel.changeSelectedTab(.timer)
             }
             
             Divider()
@@ -146,5 +155,6 @@ private struct TabNavigationView: View {
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
         SettingView()
+            .environmentObject(HomeViewModel())
     }
 }

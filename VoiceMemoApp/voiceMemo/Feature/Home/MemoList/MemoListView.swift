@@ -8,53 +8,53 @@ import SwiftUI
 struct MemoListView: View {
     
     @EnvironmentObject private var pathModel: PathModel
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     @EnvironmentObject private var memoListViewModel: MemoListViewModel
     
     var body: some View {
-        ZStack {
-            VStack(spacing: 20) {
-                if !memoListViewModel.memos.isEmpty {
-                    CustomNavigationBar(
-                        isDisplayLeftButton: false,
-                        rightButtonAction: {
-                            memoListViewModel.navigationRightButtonTapped()
-                        },
-                        rightButtonType: memoListViewModel.navigationBarRightButtonMode
-                    )
-                } else {
-                    CustomNavigationBar(
-                        isDisplayLeftButton: false,
-                        isDisplayRightButton: false
-                    )
-                }
-                
-                // 타이틀 뷰
-                TitleView()
-                
-                // 안내 뷰 or 메모리스트 컨텐츠 뷰
-                if memoListViewModel.memos.isEmpty {
-                    MemoAnnouncementView()
-                } else {
-                    MemoListContentView()
-                }
-                
-                Spacer()
+        
+        VStack(spacing: 20) {
+            if !memoListViewModel.memos.isEmpty {
+                CustomNavigationBar(
+                    isDisplayLeftButton: false,
+                    rightButtonAction: {
+                        memoListViewModel.navigationRightButtonTapped()
+                    },
+                    rightButtonType: memoListViewModel.navigationBarRightButtonMode
+                )
+            } else {
+                CustomNavigationBar(
+                    isDisplayLeftButton: false,
+                    isDisplayRightButton: false
+                )
             }
             
+            // 타이틀 뷰
+            TitleView()
             
+            // 안내 뷰 or 메모리스트 컨텐츠 뷰
+            if memoListViewModel.memos.isEmpty {
+                MemoAnnouncementView()
+            } else {
+                MemoListContentView()
+            }
             
-            // 메모 작성 이이콘 뷰
-            WriteMemoButton()
-                .padding(.trailing, 20)
-                .padding(.bottom, 50)
+            Spacer()
         }
-        .alert("메모 \(memoListViewModel.removeMemoCount)개 삭제하시겠습니까?", isPresented: $memoListViewModel.isDisplayRemoveMemoAlert) {
+        .writeButton {
+            pathModel.paths.append(.memoView(isCreateMode: true, memo: nil))
+        }
+        .alert("메모 \(memoListViewModel.removeMemoCount)개 삭제하시겠습니까?", isPresented: $memoListViewModel.isDisplayRemoveMemoAlert
+        ) {
             Button("삭제", role: .destructive) {
                 memoListViewModel.removeButtonTapped()
             }
             Button("취소", role: .cancel) {
                 
             }
+        }
+        .onChange(of: memoListViewModel.memos) { memos in
+            homeViewModel.setMemosCount(memos.count)
         }
     }
 }
