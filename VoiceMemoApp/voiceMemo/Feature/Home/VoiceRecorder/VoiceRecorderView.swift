@@ -302,7 +302,21 @@ private struct VoiceRecorderButtonView: View {
                         voiceRecorderViewModel.recordButtonTapped()
                     },
                     label: {
-                        voiceRecorderViewModel.isRecording ? Image("mic_recording") : Image("mic")
+                        if voiceRecorderViewModel.isRecording {
+                            Image("mic_recording")
+                                .scaleEffect(isAnimation ? 1.5 : 1)
+                                .onAppear {
+                                    withAnimation(
+                                        .spring().repeatForever()) {
+                                            isAnimation.toggle()
+                                        }
+                                }
+                                .onDisappear {
+                                    isAnimation = false
+                                }
+                        } else {
+                            Image("mic")
+                        }
                     })
             }
         }
