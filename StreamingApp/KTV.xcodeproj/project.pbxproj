@@ -20,6 +20,15 @@
 		57B09EF92B309FE5009D4E53 /* HomeRecommendItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57B09EF72B309FE5009D4E53 /* HomeRecommendItemCell.xib */; };
 		57B09EFC2B30A3BE009D4E53 /* HomeRecommendContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B09EFA2B30A3BE009D4E53 /* HomeRecommendContainerCell.swift */; };
 		57B09EFD2B30A3BE009D4E53 /* HomeRecommendContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57B09EFB2B30A3BE009D4E53 /* HomeRecommendContainerCell.xib */; };
+		57B09EFF2B317342009D4E53 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B09EFE2B317342009D4E53 /* HomeViewModel.swift */; };
+		57B09F062B3412B0009D4E53 /* HomeRankingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B09F042B3412B0009D4E53 /* HomeRankingItemCell.swift */; };
+		57B09F072B3412B0009D4E53 /* HomeRankingItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57B09F052B3412B0009D4E53 /* HomeRankingItemCell.xib */; };
+		57B09F0A2B3412FE009D4E53 /* HomeRankingContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B09F082B3412FE009D4E53 /* HomeRankingContainerCell.swift */; };
+		57B09F0B2B3412FE009D4E53 /* HomeRankingContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57B09F092B3412FE009D4E53 /* HomeRankingContainerCell.xib */; };
+		57B09F0E2B3417BB009D4E53 /* HomeRecentWatchContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B09F0C2B3417BB009D4E53 /* HomeRecentWatchContainerCell.swift */; };
+		57B09F0F2B3417BB009D4E53 /* HomeRecentWatchContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57B09F0D2B3417BB009D4E53 /* HomeRecentWatchContainerCell.xib */; };
+		57B09F122B3417D3009D4E53 /* HomeRecentWatchItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B09F102B3417D3009D4E53 /* HomeRecentWatchItemCell.swift */; };
+		57B09F132B3417D3009D4E53 /* HomeRecentWatchItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57B09F112B3417D3009D4E53 /* HomeRecentWatchItemCell.xib */; };
 		68CA313C2AAA292900A744AF /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68CA313B2AAA292900A744AF /* Color.xcassets */; };
 		95E70C962AA8B93B007BAD7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E70C952AA8B93B007BAD7B /* AppDelegate.swift */; };
 		95E70C982AA8B93B007BAD7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E70C972AA8B93B007BAD7B /* SceneDelegate.swift */; };
@@ -63,6 +72,15 @@
 		57B09EF72B309FE5009D4E53 /* HomeRecommendItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRecommendItemCell.xib; sourceTree = "<group>"; };
 		57B09EFA2B30A3BE009D4E53 /* HomeRecommendContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendContainerCell.swift; sourceTree = "<group>"; };
 		57B09EFB2B30A3BE009D4E53 /* HomeRecommendContainerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRecommendContainerCell.xib; sourceTree = "<group>"; };
+		57B09EFE2B317342009D4E53 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		57B09F042B3412B0009D4E53 /* HomeRankingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankingItemCell.swift; sourceTree = "<group>"; };
+		57B09F052B3412B0009D4E53 /* HomeRankingItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRankingItemCell.xib; sourceTree = "<group>"; };
+		57B09F082B3412FE009D4E53 /* HomeRankingContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankingContainerCell.swift; sourceTree = "<group>"; };
+		57B09F092B3412FE009D4E53 /* HomeRankingContainerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRankingContainerCell.xib; sourceTree = "<group>"; };
+		57B09F0C2B3417BB009D4E53 /* HomeRecentWatchContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecentWatchContainerCell.swift; sourceTree = "<group>"; };
+		57B09F0D2B3417BB009D4E53 /* HomeRecentWatchContainerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRecentWatchContainerCell.xib; sourceTree = "<group>"; };
+		57B09F102B3417D3009D4E53 /* HomeRecentWatchItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecentWatchItemCell.swift; sourceTree = "<group>"; };
+		57B09F112B3417D3009D4E53 /* HomeRecentWatchItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRecentWatchItemCell.xib; sourceTree = "<group>"; };
 		68CA313B2AAA292900A744AF /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		95E70C922AA8B93B007BAD7B /* KTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E70C952AA8B93B007BAD7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +137,7 @@
 				57611CA32B301C0E00124C96 /* HomeViewController.swift */,
 				57611CAA2B3025EA00124C96 /* HomeSection.swift */,
 				57611CAC2B30296E00124C96 /* TabBarController.swift */,
+				57B09EFE2B317342009D4E53 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -140,12 +159,20 @@
 				57611CAF2B309A6D00124C96 /* HomeHeaderCell.xib */,
 				57611CA62B301CE900124C96 /* HomeVideoCell.swift */,
 				57611CA72B301CE900124C96 /* HomeVideoCell.xib */,
+				57B09F082B3412FE009D4E53 /* HomeRankingContainerCell.swift */,
+				57B09F092B3412FE009D4E53 /* HomeRankingContainerCell.xib */,
+				57B09F042B3412B0009D4E53 /* HomeRankingItemCell.swift */,
+				57B09F052B3412B0009D4E53 /* HomeRankingItemCell.xib */,
 				57B09EFA2B30A3BE009D4E53 /* HomeRecommendContainerCell.swift */,
 				57B09EFB2B30A3BE009D4E53 /* HomeRecommendContainerCell.xib */,
 				57B09EF62B309FE5009D4E53 /* HomeRecommendItemCell.swift */,
 				57B09EF72B309FE5009D4E53 /* HomeRecommendItemCell.xib */,
 				57611CB22B309C9000124C96 /* HomeFooterCell.swift */,
 				57611CB32B309C9000124C96 /* HomeFooterCell.xib */,
+				57B09F0C2B3417BB009D4E53 /* HomeRecentWatchContainerCell.swift */,
+				57B09F0D2B3417BB009D4E53 /* HomeRecentWatchContainerCell.xib */,
+				57B09F102B3417D3009D4E53 /* HomeRecentWatchItemCell.swift */,
+				57B09F112B3417D3009D4E53 /* HomeRecentWatchItemCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -309,8 +336,12 @@
 				68CA313C2AAA292900A744AF /* Color.xcassets in Resources */,
 				57611CA92B301CE900124C96 /* HomeVideoCell.xib in Resources */,
 				95E70C9F2AA8B93D007BAD7B /* Assets.xcassets in Resources */,
+				57B09F072B3412B0009D4E53 /* HomeRankingItemCell.xib in Resources */,
+				57B09F0B2B3412FE009D4E53 /* HomeRankingContainerCell.xib in Resources */,
+				57B09F0F2B3417BB009D4E53 /* HomeRecentWatchContainerCell.xib in Resources */,
 				57B09EF92B309FE5009D4E53 /* HomeRecommendItemCell.xib in Resources */,
 				95E70C9D2AA8B93B007BAD7B /* Main.storyboard in Resources */,
+				57B09F132B3417D3009D4E53 /* HomeRecentWatchItemCell.xib in Resources */,
 				57611CB52B309C9000124C96 /* HomeFooterCell.xib in Resources */,
 				57611CB12B309A6D00124C96 /* HomeHeaderCell.xib in Resources */,
 				57B09EFD2B30A3BE009D4E53 /* HomeRecommendContainerCell.xib in Resources */,
@@ -338,13 +369,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57B09F062B3412B0009D4E53 /* HomeRankingItemCell.swift in Sources */,
 				95E70C9A2AA8B93B007BAD7B /* LoginViewController.swift in Sources */,
 				57611CB02B309A6D00124C96 /* HomeHeaderCell.swift in Sources */,
 				57B09EF82B309FE5009D4E53 /* HomeRecommendItemCell.swift in Sources */,
 				57611CB42B309C9000124C96 /* HomeFooterCell.swift in Sources */,
 				57611CA82B301CE900124C96 /* HomeVideoCell.swift in Sources */,
 				57611CAB2B3025EA00124C96 /* HomeSection.swift in Sources */,
+				57B09F0E2B3417BB009D4E53 /* HomeRecentWatchContainerCell.swift in Sources */,
+				57B09F122B3417D3009D4E53 /* HomeRecentWatchItemCell.swift in Sources */,
 				95E70C962AA8B93B007BAD7B /* AppDelegate.swift in Sources */,
+				57B09EFF2B317342009D4E53 /* HomeViewModel.swift in Sources */,
+				57B09F0A2B3412FE009D4E53 /* HomeRankingContainerCell.swift in Sources */,
 				57611CAD2B30296E00124C96 /* TabBarController.swift in Sources */,
 				57B09EFC2B30A3BE009D4E53 /* HomeRecommendContainerCell.swift in Sources */,
 				95E70C982AA8B93B007BAD7B /* SceneDelegate.swift in Sources */,
