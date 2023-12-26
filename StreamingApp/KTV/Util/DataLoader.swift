@@ -30,7 +30,7 @@ struct DataLoader {
         
         let jsonDecoder = JSONDecoder()
         let data = try Data(contentsOf: jsonUrl)
-        let model = try jsonDecoder.decode(T.self, from: data)
+        let model = try jsonDecoder.decode(type, from: data)
         return model
     }
 }
