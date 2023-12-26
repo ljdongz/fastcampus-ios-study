@@ -30,6 +30,8 @@ class HomeRecommendContainerCell: UITableViewCell {
     
     weak var delegate: HomeRecommendContainerCellDelegate?
     
+    private var recommends: [Home.Recommend]?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -57,6 +59,10 @@ class HomeRecommendContainerCell: UITableViewCell {
         self.tableView.rowHeight = HomeRecommendItemCell.height
     }
     
+    func setData(_ data: [Home.Recommend]) {
+        self.recommends = data
+        self.tableView.reloadData()
+    }
     
     @IBAction func foldButtonDidTapped(_ sender: Any) {
         
@@ -70,7 +76,14 @@ extension HomeRecommendContainerCell: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        tableView.dequeueReusableCell(withIdentifier: HomeRecommendItemCell.identifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: HomeRecommendItemCell.identifier, for: indexPath)
+        
+        if let cell = cell as? HomeRecommendItemCell,
+           let data = self.recommends?[indexPath.row] {
+            cell.setData(data, rank: indexPath.row + 1)
+        }
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

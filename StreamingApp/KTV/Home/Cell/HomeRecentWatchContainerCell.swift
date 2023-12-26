@@ -19,6 +19,8 @@ class HomeRecentWatchContainerCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     weak var delegate: HomeRecentWatchContainerCellDelegate?
+    
+    private var recents: [Home.Recent]?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,11 +42,15 @@ class HomeRecentWatchContainerCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setData(_ data: [Home.Recent]) {
+        self.recents = data
+        collectionView.reloadData()
+    }
 }
 
 extension HomeRecentWatchContainerCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        self.recents?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -52,6 +58,12 @@ extension HomeRecentWatchContainerCell: UICollectionViewDelegate, UICollectionVi
             withReuseIdentifier: HomeRecentWatchItemCell.identifier,
             for: indexPath
         )
+        
+        if let cell = cell as? HomeRecentWatchItemCell,
+           let data = self.recents?[indexPath.item] {
+            cell.setData(data)
+        }
+        
         return cell
     }
     

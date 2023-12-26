@@ -20,6 +20,15 @@ class HomeRecommendItemCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    private var imageTask: Task<Void, Never>?
+    private static let timeFormatter: DateComponentsFormatter = {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .positional
+        formatter.zeroFormattingBehavior = .pad
+        formatter.allowedUnits = [.minute, .second]
+        return formatter
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -36,6 +45,24 @@ class HomeRecommendItemCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         
+    }
+    
+    func setData(_ data: Home.Recommend, rank: Int?) {
+        self.rankLabel.isHidden = rank == nil
+        if let rank {
+            self.rankLabel.text = "\(rank)"
+        }
+        self.playTimeLabel.text = Self.timeFormatter.string(from: data.playtime)
+        self.titleLabel.text = data.title
+        self.descriptionLabel.text = data.channel
+        self.imageTask = .init(
+            operation: {
+                guard let responseData = try? await URLSession.shared.data(for: .init(url: data.imageUrl)).0
+                else { return }
+                self.thumbnailImageView.image = UIImage(data: responseData)
+            }
+            
+        )
     }
     
 }

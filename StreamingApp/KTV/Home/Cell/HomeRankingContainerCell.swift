@@ -20,6 +20,8 @@ class HomeRankingContainerCell: UITableViewCell {
     
     weak var delegate: HomeRankingContainerCellDelegate?
     
+    private var rankings: [Home.Ranking]?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -37,18 +39,24 @@ class HomeRankingContainerCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setData(_ data: [Home.Ranking]) {
+        self.rankings = data
+        self.collectionView.reloadData()
+    }
 }
 
 extension HomeRankingContainerCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        self.rankings?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeRankingItemCell.identifier, for: indexPath)
         
-        if let cell = cell as? HomeRankingItemCell {
-            cell.setRank(indexPath.item + 1)
+        
+        if let cell = cell as? HomeRankingItemCell,
+           let data = self.rankings?[indexPath.item] {
+            cell.setData(data, rank: indexPath.item + 1)
         }
         
         return cell

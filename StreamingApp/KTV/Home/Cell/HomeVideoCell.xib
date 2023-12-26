@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -151,7 +150,7 @@
                 <outlet property="containerView" destination="kp2-jz-csT" id="8AU-DR-O9f"/>
                 <outlet property="hotImageView" destination="yaQ-Zs-dWz" id="Duq-XK-AI9"/>
                 <outlet property="subtitleLabel" destination="9cN-Nl-R6b" id="JpQ-1j-YDx"/>
-                <outlet property="thumnailImageView" destination="wte-YF-uGA" id="jhQ-0Z-gH5"/>
+                <outlet property="thumbnailImageView" destination="wte-YF-uGA" id="jhQ-0Z-gH5"/>
                 <outlet property="titleLabel" destination="mwA-dX-6bM" id="OKL-o3-icb"/>
             </connections>
             <point key="canvasLocation" x="9" y="-12"/>
