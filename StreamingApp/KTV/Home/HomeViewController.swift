@@ -128,7 +128,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             
             if let cell = cell as? HomeRecommendContainerCell,
                let data = self.homeViewModel.home?.recommends {
-                cell.setData(data)
+                cell.setViewModel(homeViewModel.recommendViewModel)
                 cell.delegate = self
             }
             return cell
@@ -150,7 +150,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .recentWatch:
             return HomeRecentWatchContainerCell.height
         case .recommend:
-            return HomeRecommendContainerCell.height
+            return HomeRecommendContainerCell.height(viewModel: homeViewModel.recommendViewModel)
         case .footer:
             return HomeFooterCell.height
         }
@@ -158,6 +158,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeViewController: HomeRecommendContainerCellDelegate {
+    func homeRecommendContainerCellFoldChanged(_ cell: HomeRecommendContainerCell) {
+        self.tableView.reloadData()
+    }
+    
     func homeRecommendContainerCell(_ cell: HomeRecommendContainerCell, didSelectItemAt index: Int) {
         print(index)
     }

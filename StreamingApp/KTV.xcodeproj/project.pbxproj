@@ -38,6 +38,7 @@
 		57D914172B3AC50C005994D1 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D914162B3AC50C005994D1 /* Home.swift */; };
 		57D9141A2B3AED91005994D1 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D914192B3AED91005994D1 /* DataLoader.swift */; };
 		57D9141C2B3AED9B005994D1 /* UIImageView+Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9141B2B3AED9B005994D1 /* UIImageView+Task.swift */; };
+		57D9141E2B3B0383005994D1 /* HomeRecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9141D2B3B0383005994D1 /* HomeRecommendViewModel.swift */; };
 		68CA313C2AAA292900A744AF /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68CA313B2AAA292900A744AF /* Color.xcassets */; };
 		95E70C962AA8B93B007BAD7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E70C952AA8B93B007BAD7B /* AppDelegate.swift */; };
 		95E70C982AA8B93B007BAD7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E70C972AA8B93B007BAD7B /* SceneDelegate.swift */; };
@@ -99,6 +100,7 @@
 		57D914162B3AC50C005994D1 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		57D914192B3AED91005994D1 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		57D9141B2B3AED9B005994D1 /* UIImageView+Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Task.swift"; sourceTree = "<group>"; };
+		57D9141D2B3B0383005994D1 /* HomeRecommendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendViewModel.swift; sourceTree = "<group>"; };
 		68CA313B2AAA292900A744AF /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		95E70C922AA8B93B007BAD7B /* KTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E70C952AA8B93B007BAD7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				57611CA32B301C0E00124C96 /* HomeViewController.swift */,
 				57611CAA2B3025EA00124C96 /* HomeSection.swift */,
 				57B09EFE2B317342009D4E53 /* HomeViewModel.swift */,
+				57D9141D2B3B0383005994D1 /* HomeRecommendViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				57B09EF82B309FE5009D4E53 /* HomeRecommendItemCell.swift in Sources */,
 				57D914172B3AC50C005994D1 /* Home.swift in Sources */,
 				57611CB42B309C9000124C96 /* HomeFooterCell.swift in Sources */,
+				57D9141E2B3B0383005994D1 /* HomeRecommendViewModel.swift in Sources */,
 				57611CA82B301CE900124C96 /* HomeVideoCell.swift in Sources */,
 				57611CAB2B3025EA00124C96 /* HomeSection.swift in Sources */,
 				57B09F0E2B3417BB009D4E53 /* HomeRecentWatchContainerCell.swift in Sources */,
