@@ -33,6 +33,8 @@ class HomeVideoCell: UITableViewCell {
         self.containerView.layer.cornerRadius = 10
         self.containerView.layer.borderColor = UIColor(resource: .strokeLight).cgColor
         self.containerView.layer.borderWidth = 1
+        self.containerView.clipsToBounds = true
+        self.channelImageView.layer.cornerRadius = 15
         
     }
 
@@ -65,27 +67,7 @@ class HomeVideoCell: UITableViewCell {
         self.channelTitleLabel.text = data.channel
         self.channelSubtitleLabel.text = data.channelDescription
         self.hotImageView.isHidden = !data.isHot
-        self.thumbnailTask = .init(
-            operation: {
-                guard
-                    let responseData = try? await URLSession.shared.data(for: .init(url: data.imageUrl)).0
-                else {
-                    return
-                }
-                
-                self.thumbnailImageView.image = UIImage(data: responseData)
-            }
-        )
-        self.channelThumbnailTask = .init(
-            operation: {
-                guard
-                    let responseData = try? await URLSession.shared.data(for: .init(url: data.channelThumbnailURL)).0
-                else {
-                    return
-                }
-                
-                self.thumbnailImageView.image = UIImage(data: responseData)
-            }
-        )
+        self.thumbnailTask = self.thumbnailImageView.loadImage(url: data.imageUrl)
+        self.channelThumbnailTask = self.channelImageView.loadImage(url: data.channelThumbnailURL)
     }
 }

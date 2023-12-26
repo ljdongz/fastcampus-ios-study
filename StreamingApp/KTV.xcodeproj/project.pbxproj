@@ -36,6 +36,8 @@
 		57D914132B3AC49E005994D1 /* live.json in Resources */ = {isa = PBXBuildFile; fileRef = 57D9140E2B3AC49D005994D1 /* live.json */; };
 		57D914142B3AC49E005994D1 /* video.json in Resources */ = {isa = PBXBuildFile; fileRef = 57D9140F2B3AC49E005994D1 /* video.json */; };
 		57D914172B3AC50C005994D1 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D914162B3AC50C005994D1 /* Home.swift */; };
+		57D9141A2B3AED91005994D1 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D914192B3AED91005994D1 /* DataLoader.swift */; };
+		57D9141C2B3AED9B005994D1 /* UIImageView+Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9141B2B3AED9B005994D1 /* UIImageView+Task.swift */; };
 		68CA313C2AAA292900A744AF /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68CA313B2AAA292900A744AF /* Color.xcassets */; };
 		95E70C962AA8B93B007BAD7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E70C952AA8B93B007BAD7B /* AppDelegate.swift */; };
 		95E70C982AA8B93B007BAD7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E70C972AA8B93B007BAD7B /* SceneDelegate.swift */; };
@@ -95,6 +97,8 @@
 		57D9140E2B3AC49D005994D1 /* live.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = live.json; sourceTree = "<group>"; };
 		57D9140F2B3AC49E005994D1 /* video.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = video.json; sourceTree = "<group>"; };
 		57D914162B3AC50C005994D1 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		57D914192B3AED91005994D1 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		57D9141B2B3AED9B005994D1 /* UIImageView+Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Task.swift"; sourceTree = "<group>"; };
 		68CA313B2AAA292900A744AF /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		95E70C922AA8B93B007BAD7B /* KTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E70C952AA8B93B007BAD7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +222,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		57D914182B3AED80005994D1 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				57D914192B3AED91005994D1 /* DataLoader.swift */,
+				57D9141B2B3AED9B005994D1 /* UIImageView+Task.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		95E70C892AA8B93B007BAD7B = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +257,7 @@
 				57611CAC2B30296E00124C96 /* TabBarController.swift */,
 				57611CA22B301B7000124C96 /* App */,
 				57D914072B3AC45E005994D1 /* URLDefines */,
+				57D914182B3AED80005994D1 /* Util */,
 				57D914082B3AC468005994D1 /* JSON */,
 				57611CA02B301A4100124C96 /* Login */,
 				57611CA12B301B6700124C96 /* Home */,
@@ -428,11 +442,13 @@
 				57611CA82B301CE900124C96 /* HomeVideoCell.swift in Sources */,
 				57611CAB2B3025EA00124C96 /* HomeSection.swift in Sources */,
 				57B09F0E2B3417BB009D4E53 /* HomeRecentWatchContainerCell.swift in Sources */,
+				57D9141A2B3AED91005994D1 /* DataLoader.swift in Sources */,
 				57B09F122B3417D3009D4E53 /* HomeRecentWatchItemCell.swift in Sources */,
 				95E70C962AA8B93B007BAD7B /* AppDelegate.swift in Sources */,
 				57B09EFF2B317342009D4E53 /* HomeViewModel.swift in Sources */,
 				57B09F0A2B3412FE009D4E53 /* HomeRankingContainerCell.swift in Sources */,
 				57611CAD2B30296E00124C96 /* TabBarController.swift in Sources */,
+				57D9141C2B3AED9B005994D1 /* UIImageView+Task.swift in Sources */,
 				57B09EFC2B30A3BE009D4E53 /* HomeRecommendContainerCell.swift in Sources */,
 				95E70C982AA8B93B007BAD7B /* SceneDelegate.swift in Sources */,
 				57D9140A2B3AC480005994D1 /* URLDefines.swift in Sources */,

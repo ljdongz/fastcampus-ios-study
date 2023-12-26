@@ -25,7 +25,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nnq-eM-ObA">
                                 <rect key="frame" x="0.0" y="0.0" width="107" height="59"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bCo-G0-6pM">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bCo-G0-6pM">
                                         <rect key="frame" x="0.0" y="0.0" width="107" height="59"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="If7-AC-oxH">
@@ -40,23 +40,22 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OEj-ra-dbu">
-                                        <rect key="frame" x="72" y="40" width="30" height="15"/>
+                                        <rect key="frame" x="73" y="39" width="30" height="15"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:49" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwg-eL-8Sy">
-                                                <rect key="frame" x="3" y="1" width="24" height="13"/>
+                                                <rect key="frame" x="3" y="1" width="23" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                                 <color key="textColor" name="main-wh"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" name="bg"/>
+                                        <color key="backgroundColor" name="bk-origin"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Kwg-eL-8Sy" secondAttribute="trailing" constant="3" id="SjF-kT-qB0"/>
+                                            <constraint firstAttribute="trailing" secondItem="Kwg-eL-8Sy" secondAttribute="trailing" constant="4" id="SjF-kT-qB0"/>
                                             <constraint firstAttribute="height" constant="15" id="eLW-Rl-gEq"/>
                                             <constraint firstItem="Kwg-eL-8Sy" firstAttribute="leading" secondItem="OEj-ra-dbu" secondAttribute="leading" constant="3" id="g3I-fu-Ibu"/>
                                             <constraint firstItem="Kwg-eL-8Sy" firstAttribute="top" secondItem="OEj-ra-dbu" secondAttribute="top" constant="1" id="i8K-77-hqS"/>
-                                            <constraint firstAttribute="bottom" secondItem="Kwg-eL-8Sy" secondAttribute="bottom" constant="1" id="lIZ-ne-QSf"/>
-                                            <constraint firstAttribute="width" constant="30" id="pSY-Qw-IqH"/>
+                                            <constraint firstAttribute="bottom" secondItem="Kwg-eL-8Sy" secondAttribute="bottom" constant="2" id="lIZ-ne-QSf"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -64,13 +63,13 @@
                                 <constraints>
                                     <constraint firstItem="If7-AC-oxH" firstAttribute="leading" secondItem="Nnq-eM-ObA" secondAttribute="leading" id="2He-mo-XZt"/>
                                     <constraint firstItem="If7-AC-oxH" firstAttribute="top" secondItem="Nnq-eM-ObA" secondAttribute="top" id="AGu-hH-anT"/>
-                                    <constraint firstAttribute="trailing" secondItem="OEj-ra-dbu" secondAttribute="trailing" constant="5" id="LPu-1N-val"/>
+                                    <constraint firstAttribute="trailing" secondItem="OEj-ra-dbu" secondAttribute="trailing" constant="4" id="LPu-1N-val"/>
                                     <constraint firstAttribute="bottom" secondItem="bCo-G0-6pM" secondAttribute="bottom" id="Nah-2P-2cl"/>
                                     <constraint firstItem="bCo-G0-6pM" firstAttribute="top" secondItem="Nnq-eM-ObA" secondAttribute="top" id="Nln-Ra-Rce"/>
                                     <constraint firstAttribute="trailing" secondItem="bCo-G0-6pM" secondAttribute="trailing" id="VD6-Oh-bLf"/>
                                     <constraint firstAttribute="width" constant="107" id="Y63-jm-fF2"/>
                                     <constraint firstItem="bCo-G0-6pM" firstAttribute="leading" secondItem="Nnq-eM-ObA" secondAttribute="leading" id="kME-yR-mgv"/>
-                                    <constraint firstAttribute="bottom" secondItem="OEj-ra-dbu" secondAttribute="bottom" constant="4" id="uLj-qE-dtk"/>
+                                    <constraint firstAttribute="bottom" secondItem="OEj-ra-dbu" secondAttribute="bottom" constant="5" id="uLj-qE-dtk"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZNk-mR-C1K">
@@ -132,9 +131,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="bg">
-            <color red="0.10588235294117647" green="0.10588235294117647" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="bk-origin">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

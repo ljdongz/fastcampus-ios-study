@@ -34,15 +34,6 @@ class HomeRankingItemCell: UICollectionViewCell {
 
     func setData(_ data: Home.Ranking, rank: Int) {
         self.rankLabel.text = "\(rank)"
-        self.imageTask = .init(
-            operation: {
-                guard let responseData = try? await URLSession.shared.data(for: .init(url: data.imageUrl)).0
-                else {
-                    return
-                }
-                
-                self.thumbnailImageView.image = UIImage(data: responseData)
-            }
-        )
+        self.imageTask = self.thumbnailImageView.loadImage(url: data.imageUrl)
     }
 }

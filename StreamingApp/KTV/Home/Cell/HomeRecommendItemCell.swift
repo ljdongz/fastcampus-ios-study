@@ -36,9 +36,6 @@ class HomeRecommendItemCell: UITableViewCell {
         self.thumbnailContainerView.clipsToBounds = true
         self.rankLabel.layer.cornerRadius = 5
         self.rankLabel.clipsToBounds = true
-        
-        self.playTimeBGView.backgroundColor = .clear
-        self.playTimeLabel.layer.cornerRadius = 3
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -55,14 +52,7 @@ class HomeRecommendItemCell: UITableViewCell {
         self.playTimeLabel.text = Self.timeFormatter.string(from: data.playtime)
         self.titleLabel.text = data.title
         self.descriptionLabel.text = data.channel
-        self.imageTask = .init(
-            operation: {
-                guard let responseData = try? await URLSession.shared.data(for: .init(url: data.imageUrl)).0
-                else { return }
-                self.thumbnailImageView.image = UIImage(data: responseData)
-            }
-            
-        )
+        self.imageTask = thumbnailImageView.loadImage(url: data.imageUrl)
     }
     
 }
