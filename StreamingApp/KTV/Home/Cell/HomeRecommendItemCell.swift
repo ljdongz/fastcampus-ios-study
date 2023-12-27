@@ -44,7 +44,7 @@ class HomeRecommendItemCell: UITableViewCell {
         
     }
     
-    func setData(_ data: Home.Recommend, rank: Int?) {
+    func setData(_ data: VideoListItem, rank: Int?) {
         self.rankLabel.isHidden = rank == nil
         if let rank {
             self.rankLabel.text = "\(rank)"

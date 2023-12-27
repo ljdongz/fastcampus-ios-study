@@ -17,6 +17,7 @@
                 <outlet property="favoriteButton" destination="FoR-Hi-YOP" id="O3Y-WF-nWA"/>
                 <outlet property="playButton" destination="507-17-9z0" id="ow1-0K-ld1"/>
                 <outlet property="playCountLabel" destination="eUd-A5-K0Y" id="HaQ-mm-cj5"/>
+                <outlet property="portraitControlPannel" destination="Ty8-j5-NdH" id="LNn-7b-r0G"/>
                 <outlet property="recommendTableView" destination="NpB-gZ-hrF" id="gcp-SA-oZg"/>
                 <outlet property="tableViewHeightConstraint" destination="E4p-Zg-Uqz" id="jY1-Xr-QfH"/>
                 <outlet property="titleLabel" destination="eaa-XY-XDU" id="Zaa-3e-ldB"/>
@@ -36,11 +37,8 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="221"/>
                             <color key="backgroundColor" name="d-text-deep"/>
                             <gestureRecognizers/>
-                            <connections>
-                                <outletCollection property="gestureRecognizers" destination="a5j-BX-R8V" appends="YES" id="zB2-dO-r5V"/>
-                            </connections>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ty8-j5-NdH">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ty8-j5-NdH">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="221"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAO-po-zg8">
@@ -144,6 +142,9 @@
                         <constraint firstAttribute="width" secondItem="efW-z4-mg2" secondAttribute="height" multiplier="16:9" id="pkc-Hy-kUa"/>
                         <constraint firstItem="Ty8-j5-NdH" firstAttribute="leading" secondItem="efW-z4-mg2" secondAttribute="leading" id="xYF-rb-UFN"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="a5j-BX-R8V" appends="YES" id="L52-4P-MU9"/>
+                    </connections>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ry0-7n-u03">
                     <rect key="frame" x="0.0" y="280" width="393" height="538"/>
