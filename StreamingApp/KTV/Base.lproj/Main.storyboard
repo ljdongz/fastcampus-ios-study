@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -101,21 +102,164 @@
             </objects>
             <point key="canvasLocation" x="2601" y="-32"/>
         </scene>
-        <!--View Controller-->
+        <!--My-->
         <scene sceneID="vdG-Wz-q3D">
             <objects>
-                <viewController id="nlA-Ux-ekW" sceneMemberID="viewController">
+                <viewController id="nlA-Ux-ekW" customClass="MyViewController" customModule="KTV" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OHW-de-Gbr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eDa-pa-VtJ">
+                                <rect key="frame" x="0.0" y="103" width="393" height="156"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Q9V-Cn-z2R">
+                                        <rect key="frame" x="30" y="30" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="P9z-kv-fUh"/>
+                                            <constraint firstAttribute="height" constant="48" id="YQ9-dM-UUE"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZWf-RM-xfW">
+                                        <rect key="frame" x="92" y="37" width="271" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="프로필 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qvr-h9-mNP">
+                                                <rect key="frame" x="0.0" y="0.0" width="271" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" name="main-wh"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계정 주소@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6V-hK-7cz">
+                                                <rect key="frame" x="0.0" y="17" width="271" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" name="icon-on"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ZWf-RM-xfW" firstAttribute="leading" secondItem="Q9V-Cn-z2R" secondAttribute="trailing" constant="14" id="IM2-va-6cI"/>
+                                    <constraint firstItem="ZWf-RM-xfW" firstAttribute="centerY" secondItem="Q9V-Cn-z2R" secondAttribute="centerY" id="OcB-UM-CI8"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZWf-RM-xfW" secondAttribute="trailing" constant="30" id="ceQ-CR-qbe"/>
+                                    <constraint firstAttribute="height" constant="156" id="h4O-IZ-5rb"/>
+                                    <constraint firstItem="Q9V-Cn-z2R" firstAttribute="top" secondItem="eDa-pa-VtJ" secondAttribute="top" constant="30" id="jfS-8J-vix"/>
+                                    <constraint firstItem="Q9V-Cn-z2R" firstAttribute="leading" secondItem="eDa-pa-VtJ" secondAttribute="leading" constant="30" id="yU6-lh-cyz"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3s-4D-f5H">
+                                <rect key="frame" x="0.0" y="259" width="393" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="ICj-WE-dkQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <inset key="contentEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="14" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="찜한 채널" image="my_bookmark">
+                                    <color key="titleColor" name="main-wh"/>
+                                </state>
+                                <connections>
+                                    <action selector="bookmarkDidTapped:" destination="nlA-Ux-ekW" eventType="touchUpInside" id="ki8-9U-iL6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbH-kp-sHN">
+                                <rect key="frame" x="0.0" y="313" width="393" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="X9n-Mw-uVr"/>
+                                    <constraint firstAttribute="height" constant="54" id="wCe-A4-bBx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <inset key="contentEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="14" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="좋아요한 영상" image="favorite">
+                                    <color key="titleColor" name="main-wh"/>
+                                </state>
+                                <connections>
+                                    <action selector="favoriteDidTapped:" destination="nlA-Ux-ekW" eventType="touchUpInside" id="Wbn-9o-QNY"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="JQM-wE-JjE"/>
                         <color key="backgroundColor" name="bg"/>
+                        <constraints>
+                            <constraint firstItem="eDa-pa-VtJ" firstAttribute="leading" secondItem="JQM-wE-JjE" secondAttribute="leading" id="7vd-ZS-0Bx"/>
+                            <constraint firstItem="JQM-wE-JjE" firstAttribute="trailing" secondItem="D3s-4D-f5H" secondAttribute="trailing" id="8gL-fz-bhY"/>
+                            <constraint firstItem="eDa-pa-VtJ" firstAttribute="top" secondItem="JQM-wE-JjE" secondAttribute="top" id="BCL-gt-bzY"/>
+                            <constraint firstItem="D3s-4D-f5H" firstAttribute="top" secondItem="eDa-pa-VtJ" secondAttribute="bottom" id="MZh-wK-xRs"/>
+                            <constraint firstItem="QbH-kp-sHN" firstAttribute="leading" secondItem="JQM-wE-JjE" secondAttribute="leading" id="N9K-jG-nP4"/>
+                            <constraint firstItem="QbH-kp-sHN" firstAttribute="trailing" secondItem="JQM-wE-JjE" secondAttribute="trailing" id="aCd-Mk-cUh"/>
+                            <constraint firstItem="JQM-wE-JjE" firstAttribute="trailing" secondItem="eDa-pa-VtJ" secondAttribute="trailing" id="olu-FO-29K"/>
+                            <constraint firstItem="D3s-4D-f5H" firstAttribute="leading" secondItem="JQM-wE-JjE" secondAttribute="leading" id="q7x-3z-5dG"/>
+                            <constraint firstItem="QbH-kp-sHN" firstAttribute="top" secondItem="D3s-4D-f5H" secondAttribute="bottom" id="zQg-ZL-cp5"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="tabIcon_my" selectedImage="tabIcon_my_selected" id="jP4-cL-Yys"/>
+                    <navigationItem key="navigationItem" title="My" id="lBi-D6-lYL"/>
+                    <connections>
+                        <segue destination="n2Q-ay-Nzx" kind="show" identifier="bookmark" id="PK5-N2-ceW"/>
+                        <segue destination="ggZ-dY-RnM" kind="show" identifier="favorite" id="JAE-Ft-xb8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ojq-7r-zIE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2639" y="674"/>
+            <point key="canvasLocation" x="3565.6488549618321" y="673.94366197183103"/>
+        </scene>
+        <!--좋아요한 영상-->
+        <scene sceneID="PTN-dS-9bL">
+            <objects>
+                <viewController id="ggZ-dY-RnM" customClass="FavoriteViewController" customModule="KTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LEQ-Ec-vtX">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vL2-VL-Hb6">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4B8-92-MYD"/>
+                        <color key="backgroundColor" name="bg"/>
+                        <constraints>
+                            <constraint firstItem="4B8-92-MYD" firstAttribute="trailing" secondItem="vL2-VL-Hb6" secondAttribute="trailing" id="IJb-lr-d4q"/>
+                            <constraint firstItem="4B8-92-MYD" firstAttribute="bottom" secondItem="vL2-VL-Hb6" secondAttribute="bottom" id="Pfg-fI-bgX"/>
+                            <constraint firstItem="vL2-VL-Hb6" firstAttribute="top" secondItem="4B8-92-MYD" secondAttribute="top" id="nGb-Pk-qt3"/>
+                            <constraint firstItem="vL2-VL-Hb6" firstAttribute="leading" secondItem="4B8-92-MYD" secondAttribute="leading" id="pqQ-rs-q2T"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="좋아요한 영상" id="odV-ZQ-C7f"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1OP-cL-ybc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4512" y="1136"/>
+        </scene>
+        <!--찜한 채널-->
+        <scene sceneID="SbR-55-6Jr">
+            <objects>
+                <viewController id="n2Q-ay-Nzx" customClass="BookmarkViewController" customModule="KTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7NV-WT-d8V">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="b8n-2R-FeS">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OqY-4K-dba"/>
+                        <color key="backgroundColor" name="bg"/>
+                        <constraints>
+                            <constraint firstItem="b8n-2R-FeS" firstAttribute="leading" secondItem="OqY-4K-dba" secondAttribute="leading" id="0Nc-Qw-N9W"/>
+                            <constraint firstItem="b8n-2R-FeS" firstAttribute="top" secondItem="OqY-4K-dba" secondAttribute="top" id="M6X-6c-JnC"/>
+                            <constraint firstItem="OqY-4K-dba" firstAttribute="bottom" secondItem="b8n-2R-FeS" secondAttribute="bottom" id="Ybm-3t-Ua4"/>
+                            <constraint firstItem="OqY-4K-dba" firstAttribute="trailing" secondItem="b8n-2R-FeS" secondAttribute="trailing" id="djY-Uh-uS4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="찜한 채널" id="snf-15-frF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uWv-78-Fto" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4501" y="449"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="uG6-Bg-fH7">
@@ -138,27 +282,68 @@
                     <connections>
                         <segue destination="Adq-Gh-hJC" kind="relationship" relationship="viewControllers" id="Sdd-wn-GhV"/>
                         <segue destination="Jnh-9b-WCN" kind="relationship" relationship="viewControllers" id="kvy-mR-d9N"/>
-                        <segue destination="nlA-Ux-ekW" kind="relationship" relationship="viewControllers" id="MuB-OI-LYv"/>
+                        <segue destination="H6X-wb-3OF" kind="relationship" relationship="viewControllers" id="MuB-OI-LYv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdw-Ue-LM9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1646.5648854961833" y="-32.394366197183103"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6ZM-hX-Fes">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H6X-wb-3OF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="tabIcon_my" selectedImage="tabIcon_my_selected" id="jP4-cL-Yys"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vef-9Y-5SY">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="main-wh"/>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" name="bg"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" name="main-wh"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" name="bg"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" name="main-wh"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nlA-Ux-ekW" kind="relationship" relationship="rootViewController" id="aLp-lg-H42"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QPv-c9-eTM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2638.9312977099235" y="673.94366197183103"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="favorite" width="20" height="20"/>
         <image name="launchImage" width="100" height="100"/>
+        <image name="my_bookmark" width="20" height="20"/>
         <image name="tabIcon_home" width="28" height="28"/>
         <image name="tabIcon_home_selected" width="28" height="28"/>
         <image name="tabIcon_live" width="80" height="28"/>
         <image name="tabIcon_live_selected" width="80" height="28"/>
         <image name="tabIcon_my" width="28" height="28"/>
         <image name="tabIcon_my_selected" width="29" height="28"/>
+        <image name="user" width="14" height="14"/>
         <namedColor name="bg">
             <color red="0.10588235294117647" green="0.10588235294117647" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="icon-on">
+            <color red="0.36862745098039218" green="0.36862745098039218" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="main-brown">
             <color red="0.27843137254901962" green="0.12941176470588237" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="main-wh">
+            <color red="0.99607843137254903" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="main-yellow">
             <color red="0.99215686274509807" green="0.89411764705882357" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -166,5 +351,8 @@
         <namedColor name="stroke-light">
             <color red="0.34509803921568627" green="0.34509803921568627" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
