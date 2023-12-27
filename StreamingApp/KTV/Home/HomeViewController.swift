@@ -64,6 +64,11 @@ class HomeViewController: UIViewController {
             self?.tableView.reloadData()
         }
     }
+    
+    private func presentVideoViewController() {
+        let vc = VideoViewController()
+        self.present(vc, animated: true)
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -155,6 +160,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return HomeFooterCell.height
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let section = HomeSection(rawValue: indexPath.section) else { return }
+        
+        switch section {
+        case .header, .footer, .ranking, .recentWatch, .recommend:
+            return
+        case .video:
+            self.presentVideoViewController()
+        }
+    }
 }
 
 extension HomeViewController: HomeRecommendContainerCellDelegate {
@@ -163,7 +179,7 @@ extension HomeViewController: HomeRecommendContainerCellDelegate {
     }
     
     func homeRecommendContainerCell(_ cell: HomeRecommendContainerCell, didSelectItemAt index: Int) {
-        print(index)
+        self.presentVideoViewController()
     }
 }
 
