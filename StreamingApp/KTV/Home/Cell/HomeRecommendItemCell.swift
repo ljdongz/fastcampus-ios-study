@@ -21,13 +21,6 @@ class HomeRecommendItemCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     private var imageTask: Task<Void, Never>?
-    private static let timeFormatter: DateComponentsFormatter = {
-        let formatter = DateComponentsFormatter()
-        formatter.unitsStyle = .positional
-        formatter.zeroFormattingBehavior = .pad
-        formatter.allowedUnits = [.minute, .second]
-        return formatter
-    }()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -49,7 +42,7 @@ class HomeRecommendItemCell: UITableViewCell {
         if let rank {
             self.rankLabel.text = "\(rank)"
         }
-        self.playTimeLabel.text = Self.timeFormatter.string(from: data.playtime)
+        self.playTimeLabel.text = DateComponentsFormatter.timeFormatter.string(from: data.playtime)
         self.titleLabel.text = data.title
         self.descriptionLabel.text = data.channel
         self.imageTask = thumbnailImageView.loadImage(url: data.imageUrl)
