@@ -60,6 +60,13 @@
 		57F9163E2B4142250021331E /* LiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57F9163C2B4142250021331E /* LiveCell.xib */; };
 		57F916402B4146AA0021331E /* Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F9163F2B4146AA0021331E /* Live.swift */; };
 		57F916422B4146EC0021331E /* LiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F916412B4146EC0021331E /* LiveViewModel.swift */; };
+		57F916452B41529C0021331E /* ChattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F916442B41529C0021331E /* ChattingView.swift */; };
+		57F916472B4152EE0021331E /* ChatSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F916462B4152EE0021331E /* ChatSimulator.swift */; };
+		57F916492B41530C0021331E /* ChattingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F916482B41530C0021331E /* ChattingViewModel.swift */; };
+		57F9164E2B4153E80021331E /* LiveChattingMessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F9164A2B4153E80021331E /* LiveChattingMessageCollectionViewCell.swift */; };
+		57F9164F2B4153E80021331E /* LiveChattingMyMessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57F9164B2B4153E80021331E /* LiveChattingMyMessageCollectionViewCell.xib */; };
+		57F916502B4153E80021331E /* LiveChattingMyMessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F9164C2B4153E80021331E /* LiveChattingMyMessageCollectionViewCell.swift */; };
+		57F916512B4153E80021331E /* LiveChattingMessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57F9164D2B4153E80021331E /* LiveChattingMessageCollectionViewCell.xib */; };
 		68CA313C2AAA292900A744AF /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68CA313B2AAA292900A744AF /* Color.xcassets */; };
 		95E70C962AA8B93B007BAD7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E70C952AA8B93B007BAD7B /* AppDelegate.swift */; };
 		95E70C982AA8B93B007BAD7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E70C972AA8B93B007BAD7B /* SceneDelegate.swift */; };
@@ -143,6 +150,13 @@
 		57F9163C2B4142250021331E /* LiveCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveCell.xib; sourceTree = "<group>"; };
 		57F9163F2B4146AA0021331E /* Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live.swift; sourceTree = "<group>"; };
 		57F916412B4146EC0021331E /* LiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewModel.swift; sourceTree = "<group>"; };
+		57F916442B41529C0021331E /* ChattingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingView.swift; sourceTree = "<group>"; };
+		57F916462B4152EE0021331E /* ChatSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSimulator.swift; sourceTree = "<group>"; };
+		57F916482B41530C0021331E /* ChattingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewModel.swift; sourceTree = "<group>"; };
+		57F9164A2B4153E80021331E /* LiveChattingMessageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveChattingMessageCollectionViewCell.swift; sourceTree = "<group>"; };
+		57F9164B2B4153E80021331E /* LiveChattingMyMessageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveChattingMyMessageCollectionViewCell.xib; sourceTree = "<group>"; };
+		57F9164C2B4153E80021331E /* LiveChattingMyMessageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveChattingMyMessageCollectionViewCell.swift; sourceTree = "<group>"; };
+		57F9164D2B4153E80021331E /* LiveChattingMessageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveChattingMessageCollectionViewCell.xib; sourceTree = "<group>"; };
 		68CA313B2AAA292900A744AF /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		95E70C922AA8B93B007BAD7B /* KTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E70C952AA8B93B007BAD7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -348,6 +362,20 @@
 			path = Live;
 			sourceTree = "<group>";
 		};
+		57F916432B4152860021331E /* LiveChatting */ = {
+			isa = PBXGroup;
+			children = (
+				57F916462B4152EE0021331E /* ChatSimulator.swift */,
+				57F916442B41529C0021331E /* ChattingView.swift */,
+				57F916482B41530C0021331E /* ChattingViewModel.swift */,
+				57F9164A2B4153E80021331E /* LiveChattingMessageCollectionViewCell.swift */,
+				57F9164D2B4153E80021331E /* LiveChattingMessageCollectionViewCell.xib */,
+				57F9164C2B4153E80021331E /* LiveChattingMyMessageCollectionViewCell.swift */,
+				57F9164B2B4153E80021331E /* LiveChattingMyMessageCollectionViewCell.xib */,
+			);
+			path = LiveChatting;
+			sourceTree = "<group>";
+		};
 		95E70C892AA8B93B007BAD7B = {
 			isa = PBXGroup;
 			children = (
@@ -382,6 +410,7 @@
 				57D9142D2B3C4F72005994D1 /* Video */,
 				57D914322B3C67DE005994D1 /* More */,
 				57F916382B41379E0021331E /* Live */,
+				57F916432B4152860021331E /* LiveChatting */,
 				57D914242B3BE0C4005994D1 /* My */,
 				57D914152B3AC4FB005994D1 /* Model */,
 				95E70C9B2AA8B93B007BAD7B /* Main.storyboard */,
@@ -513,12 +542,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57F916512B4153E80021331E /* LiveChattingMessageCollectionViewCell.xib in Resources */,
 				95E70CA22AA8B93D007BAD7B /* LaunchScreen.storyboard in Resources */,
 				68CA313C2AAA292900A744AF /* Color.xcassets in Resources */,
 				57611CA92B301CE900124C96 /* HomeVideoCell.xib in Resources */,
 				95E70C9F2AA8B93D007BAD7B /* Assets.xcassets in Resources */,
 				57B09F072B3412B0009D4E53 /* HomeRankingItemCell.xib in Resources */,
 				57D914362B3C67ED005994D1 /* MoreViewController.xib in Resources */,
+				57F9164F2B4153E80021331E /* LiveChattingMyMessageCollectionViewCell.xib in Resources */,
 				57B09F0B2B3412FE009D4E53 /* HomeRankingContainerCell.xib in Resources */,
 				57D914132B3AC49E005994D1 /* live.json in Resources */,
 				57B09F0F2B3417BB009D4E53 /* HomeRecentWatchContainerCell.xib in Resources */,
@@ -568,6 +599,7 @@
 				57611CB02B309A6D00124C96 /* HomeHeaderCell.swift in Sources */,
 				57D9142C2B3BE0FC005994D1 /* BookmarkViewController.swift in Sources */,
 				5731ABF02B3E66F10004C392 /* SeekBarView.swift in Sources */,
+				57F916502B4153E80021331E /* LiveChattingMyMessageCollectionViewCell.swift in Sources */,
 				57B09EF82B309FE5009D4E53 /* HomeRecommendItemCell.swift in Sources */,
 				57F9163A2B4137C20021331E /* LiveViewController.swift in Sources */,
 				57D914392B3C697A005994D1 /* MoreTableViewCell.swift in Sources */,
@@ -584,6 +616,7 @@
 				57B09F0E2B3417BB009D4E53 /* HomeRecentWatchContainerCell.swift in Sources */,
 				57D9141A2B3AED91005994D1 /* DataLoader.swift in Sources */,
 				57D914442B3D97F8005994D1 /* PlayerView.swift in Sources */,
+				57F916492B41530C0021331E /* ChattingViewModel.swift in Sources */,
 				57B09F122B3417D3009D4E53 /* HomeRecentWatchItemCell.swift in Sources */,
 				57D914402B3C6DBB005994D1 /* Video.swift in Sources */,
 				95E70C962AA8B93B007BAD7B /* AppDelegate.swift in Sources */,
@@ -591,11 +624,14 @@
 				57B09EFF2B317342009D4E53 /* HomeViewModel.swift in Sources */,
 				57B09F0A2B3412FE009D4E53 /* HomeRankingContainerCell.swift in Sources */,
 				57611CAD2B30296E00124C96 /* TabBarController.swift in Sources */,
+				57F916452B41529C0021331E /* ChattingView.swift in Sources */,
 				57D9141C2B3AED9B005994D1 /* UIImageView+Task.swift in Sources */,
 				57B09EFC2B30A3BE009D4E53 /* HomeRecommendContainerCell.swift in Sources */,
+				57F9164E2B4153E80021331E /* LiveChattingMessageCollectionViewCell.swift in Sources */,
 				95E70C982AA8B93B007BAD7B /* SceneDelegate.swift in Sources */,
 				57D9143C2B3C6A36005994D1 /* MoreViewModel.swift in Sources */,
 				57D9140A2B3AC480005994D1 /* URLDefines.swift in Sources */,
+				57F916472B4152EE0021331E /* ChatSimulator.swift in Sources */,
 				57611CA42B301C0E00124C96 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

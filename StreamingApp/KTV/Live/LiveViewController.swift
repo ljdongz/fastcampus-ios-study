@@ -96,4 +96,9 @@ extension LiveViewController: UICollectionViewDelegate, UICollectionViewDataSour
         5
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = VideoViewController()
+        vc.isLiveMode = true
+        self.present(vc, animated: true)
+    }
 }

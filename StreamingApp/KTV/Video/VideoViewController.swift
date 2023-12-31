@@ -34,8 +34,12 @@ class VideoViewController: UIViewController {
     
     @IBOutlet weak var landscapePlayTimeLabel: UILabel!
     @IBOutlet var playerViewBottomConstraint: NSLayoutConstraint!
+
+    @IBOutlet weak var chattingView: ChattingView!
+    var isLiveMode: Bool = false
     
     private var contentSizeObservation: NSKeyValueObservation?
+
     
     private var viewModel = VideoViewModel()
     private var isControlPannelHidden: Bool = true {
@@ -73,14 +77,17 @@ class VideoViewController: UIViewController {
 
         self.playerView.delegate = self
         self.seekbar.delegate = self
+        self.chattingView.delegate = self
         self.channelThumbnailImageView.layer.cornerRadius = 14
         self.setupRecommendTableView()
         self.bindViewModel()
         self.viewModel.request()
+        self.chattingView.isHidden = !self.isLiveMode
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
+        self.setEditing(false, animated: true)
         self.switchControlPannel(size: size)
         self.playerViewBottomConstraint.isActive = self.isLandscape(size: size)
         super.viewWillTransition(to: size, with: coordinator)
@@ -110,6 +117,9 @@ class VideoViewController: UIViewController {
     }
     
     @IBAction func commentDidTapped(_ sender: Any) {
+        if self.isLiveMode {
+            self.chattingView.isHidden = false
+        }
     }
 }
 
@@ -256,5 +266,11 @@ extension VideoViewController: PlayerViewDelegate {
 extension VideoViewController: SeekBarViewDelegate {
     func seekbar(_ seekbar: SeekBarView, seekToPercent percent: Double) {
         self.playerView.seek(to: percent)
+    }
+}
+
+extension VideoViewController: ChattingViewDelegate {
+    func liveChattingViewCloseDidTapped(_ chattingView: ChattingView) {
+        self.chattingView.isHidden = true
     }
 }
