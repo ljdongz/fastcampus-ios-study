@@ -67,6 +67,7 @@
 		57F9164F2B4153E80021331E /* LiveChattingMyMessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57F9164B2B4153E80021331E /* LiveChattingMyMessageCollectionViewCell.xib */; };
 		57F916502B4153E80021331E /* LiveChattingMyMessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F9164C2B4153E80021331E /* LiveChattingMyMessageCollectionViewCell.swift */; };
 		57F916512B4153E80021331E /* LiveChattingMessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57F9164D2B4153E80021331E /* LiveChattingMessageCollectionViewCell.xib */; };
+		57F916532B431EEE0021331E /* VideoViewControllerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F916522B431EEE0021331E /* VideoViewControllerContainer.swift */; };
 		68CA313C2AAA292900A744AF /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68CA313B2AAA292900A744AF /* Color.xcassets */; };
 		95E70C962AA8B93B007BAD7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E70C952AA8B93B007BAD7B /* AppDelegate.swift */; };
 		95E70C982AA8B93B007BAD7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E70C972AA8B93B007BAD7B /* SceneDelegate.swift */; };
@@ -157,6 +158,7 @@
 		57F9164B2B4153E80021331E /* LiveChattingMyMessageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveChattingMyMessageCollectionViewCell.xib; sourceTree = "<group>"; };
 		57F9164C2B4153E80021331E /* LiveChattingMyMessageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveChattingMyMessageCollectionViewCell.swift; sourceTree = "<group>"; };
 		57F9164D2B4153E80021331E /* LiveChattingMessageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveChattingMessageCollectionViewCell.xib; sourceTree = "<group>"; };
+		57F916522B431EEE0021331E /* VideoViewControllerContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewControllerContainer.swift; sourceTree = "<group>"; };
 		68CA313B2AAA292900A744AF /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		95E70C922AA8B93B007BAD7B /* KTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E70C952AA8B93B007BAD7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 		57D9142D2B3C4F72005994D1 /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				57F916522B431EEE0021331E /* VideoViewControllerContainer.swift */,
 				57D9142E2B3C4F8E005994D1 /* VideoViewController.swift */,
 				57D9142F2B3C4F8E005994D1 /* VideoViewController.xib */,
 				57D9143D2B3C6D9F005994D1 /* VideoViewModel.swift */,
@@ -596,6 +599,7 @@
 				57D914422B3C6E54005994D1 /* VideoListItem.swift in Sources */,
 				57B09F062B3412B0009D4E53 /* HomeRankingItemCell.swift in Sources */,
 				95E70C9A2AA8B93B007BAD7B /* LoginViewController.swift in Sources */,
+				57F916532B431EEE0021331E /* VideoViewControllerContainer.swift in Sources */,
 				57611CB02B309A6D00124C96 /* HomeHeaderCell.swift in Sources */,
 				57D9142C2B3BE0FC005994D1 /* BookmarkViewController.swift in Sources */,
 				5731ABF02B3E66F10004C392 /* SeekBarView.swift in Sources */,

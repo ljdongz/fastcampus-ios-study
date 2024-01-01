@@ -66,8 +66,14 @@ class HomeViewController: UIViewController {
     }
     
     private func presentVideoViewController() {
-        let vc = VideoViewController()
-        self.present(vc, animated: true)
+        if let vc = (self.tabBarController as? VideoViewControllerContainer)?.videoViewController {
+            (self.tabBarController as? VideoViewControllerContainer)?.presentCurrentViewController()
+        } else {
+            let vc = VideoViewController()
+            vc.delegate = self.tabBarController as? VideoViewControllerDelegate
+            self.present(vc, animated: true)
+        }
+        
     }
 }
 
