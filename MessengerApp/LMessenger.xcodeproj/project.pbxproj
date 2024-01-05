@@ -17,6 +17,8 @@
 		57F9166D2B46DCC30021331E /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F9166C2B46DCC30021331E /* AuthenticationService.swift */; };
 		57F916712B46DF260021331E /* LoginIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F916702B46DF260021331E /* LoginIntroView.swift */; };
 		57F916732B46DF3C0021331E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F916722B46DF3C0021331E /* MainTabView.swift */; };
+		57F916752B47E61C0021331E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F916742B47E61C0021331E /* LoginView.swift */; };
+		57F916772B47E6CA0021331E /* LoginButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F916762B47E6CA0021331E /* LoginButtonStyle.swift */; };
 		723ABD872AFFF1B800C260F1 /* LMessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723ABD862AFFF1B800C260F1 /* LMessengerApp.swift */; };
 		723ABD892AFFF1B800C260F1 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723ABD882AFFF1B800C260F1 /* AuthenticatedView.swift */; };
 		723ABD8B2AFFF1B900C260F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 723ABD8A2AFFF1B900C260F1 /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 		57F9166C2B46DCC30021331E /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		57F916702B46DF260021331E /* LoginIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntroView.swift; sourceTree = "<group>"; };
 		57F916722B46DF3C0021331E /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		57F916742B47E61C0021331E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		57F916762B47E6CA0021331E /* LoginButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonStyle.swift; sourceTree = "<group>"; };
 		723ABD832AFFF1B800C260F1 /* LMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		723ABD862AFFF1B800C260F1 /* LMessengerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMessengerApp.swift; sourceTree = "<group>"; };
 		723ABD882AFFF1B800C260F1 /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				57F916702B46DF260021331E /* LoginIntroView.swift */,
+				57F916742B47E61C0021331E /* LoginView.swift */,
+				57F916762B47E6CA0021331E /* LoginButtonStyle.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -361,10 +367,12 @@
 			files = (
 				57F916712B46DF260021331E /* LoginIntroView.swift in Sources */,
 				57F916622B4695380021331E /* AuthenticatedViewModel.swift in Sources */,
+				57F916752B47E61C0021331E /* LoginView.swift in Sources */,
 				57F9165C2B4694530021331E /* DIContainer.swift in Sources */,
 				723ABD892AFFF1B800C260F1 /* AuthenticatedView.swift in Sources */,
 				57F9165F2B4694A30021331E /* Services.swift in Sources */,
 				57F916692B46D7AD0021331E /* AppDelegate.swift in Sources */,
+				57F916772B47E6CA0021331E /* LoginButtonStyle.swift in Sources */,
 				72E4BEFC2B00B871007A1060 /* Color+Extension.swift in Sources */,
 				723ABD872AFFF1B800C260F1 /* LMessengerApp.swift in Sources */,
 				57F9166D2B46DCC30021331E /* AuthenticationService.swift in Sources */,
