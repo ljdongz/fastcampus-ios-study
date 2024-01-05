@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 // 인증 상태
 enum AuthenticationState {
@@ -15,11 +16,30 @@ enum AuthenticationState {
 
 class AuthenticatedViewModel: ObservableObject {
     
+    enum Action {
+        case googleLogin
+    }
+    
     @Published var authenticationState: AuthenticationState = .unauthenticated
     
     private var container: DIContainer
+    private var subscriptions = Set<AnyCancellable>()
+    
+    var userId: String?
     
     init(container: DIContainer) {
         self.container = container
+    }
+    
+    func send(action: Action) {
+        switch action {
+        case .googleLogin:
+            container.services.authService.signInWithGoogle()
+                .sink { completion in
+                    // TODO:
+                } receiveValue: { user in
+                    self.userId = user.id
+                }.store(in: &subscriptions)
+        }
     }
 }
