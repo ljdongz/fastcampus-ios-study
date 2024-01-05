@@ -24,6 +24,13 @@ struct LoginIntroView: View {
                 
                 Spacer()
                 
+//                TestLoginButton(
+//                    text: "로그인",
+//                    textColor: .lineAppColor
+//                ) {
+//                    self.isPresentedLoginView.toggle()
+//                }
+                
                 Button(
                     action: {
                         self.isPresentedLoginView.toggle()
