@@ -60,7 +60,6 @@ struct HomeView: View {
                     }
                     .tag(Tab.setting)
             }
-            .environmentObject(pathModel)
             .environmentObject(homeViewModel)
             
             // 구분선
