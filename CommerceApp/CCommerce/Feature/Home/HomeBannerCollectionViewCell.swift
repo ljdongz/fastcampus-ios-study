@@ -7,13 +7,18 @@
 
 import UIKit
 
+struct HomeBannerCollectionViewCellViewModel: Hashable {
+    let bannerImage: UIImage
+    
+    
+}
+
 class HomeBannerCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
     
-    
-    func setImage(_ image: UIImage) {
-        self.imageView.image = image
+    func setViewModel(_ viewModel: HomeBannerCollectionViewCellViewModel) {
+        self.imageView.image = viewModel.bannerImage
     }
 }
