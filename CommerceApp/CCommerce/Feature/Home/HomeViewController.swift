@@ -16,61 +16,63 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var dataSource: UICollectionViewDiffableDataSource<Section, AnyHashable>?
-    private var compositionalLayout: UICollectionViewCompositionalLayout = {
-        UICollectionViewCompositionalLayout { section, _ in
-            switch Section(rawValue: section) {
-            case .banner:
-                let itemSize: NSCollectionLayoutSize = NSCollectionLayoutSize(
-                    widthDimension: .fractionalWidth(1.0),
-                    heightDimension: .fractionalHeight(1.0)
-                )
-                let item: NSCollectionLayoutItem = .init(layoutSize: itemSize)
-                
-                let groupSize: NSCollectionLayoutSize = .init(
-                    widthDimension: .fractionalWidth(1.0),
-                    heightDimension: .fractionalWidth(165 / 393)
-                )
-                let group: NSCollectionLayoutGroup = .horizontal(
-                    layoutSize: groupSize,
-                    subitems: [item]
-                )
-                
-                let section: NSCollectionLayoutSection = .init(group: group)
-                section.orthogonalScrollingBehavior = .groupPaging
-                return section
-            case .horizontalProductItem:
-                let itemSize: NSCollectionLayoutSize = NSCollectionLayoutSize(
-                    widthDimension: .fractionalWidth(1.0),
-                    heightDimension: .fractionalHeight(1.0)
-                )
-                let item: NSCollectionLayoutItem = .init(layoutSize: itemSize)
-                
-                let groupSize: NSCollectionLayoutSize = .init(
-                    widthDimension: .absolute(117),
-                    heightDimension: .estimated(224)
-                )
-                let group: NSCollectionLayoutGroup = .horizontal(
-                    layoutSize: groupSize,
-                    subitems: [item]
-                )
-                group.contentInsets = .init(top: 0, leading: 7, bottom: 0, trailing: 7)
-                
-                let section: NSCollectionLayoutSection = .init(group: group)
-                section.orthogonalScrollingBehavior = .continuous
-                section.contentInsets  = .init(top: 20, leading: 26, bottom: 0, trailing: 26)
-                return section
-            case .none:
-                return nil
-            }
-        }
-        
-    }()
+    
+//    private var compositionalLayout: UICollectionViewCompositionalLayout = {
+//        UICollectionViewCompositionalLayout { section, _ in
+//            switch Section(rawValue: section) {
+//            case .banner:
+//                let itemSize: NSCollectionLayoutSize = NSCollectionLayoutSize(
+//                    widthDimension: .fractionalWidth(1.0),
+//                    heightDimension: .fractionalHeight(1.0)
+//                )
+//                let item: NSCollectionLayoutItem = .init(layoutSize: itemSize)
+//                
+//                let groupSize: NSCollectionLayoutSize = .init(
+//                    widthDimension: .fractionalWidth(1.0),
+//                    heightDimension: .fractionalWidth(165 / 393)
+//                )
+//                let group: NSCollectionLayoutGroup = .horizontal(
+//                    layoutSize: groupSize,
+//                    subitems: [item]
+//                )
+//                
+//                let section: NSCollectionLayoutSection = .init(group: group)
+//                section.orthogonalScrollingBehavior = .groupPaging
+//                return section
+//            case .horizontalProductItem:
+//                let itemSize: NSCollectionLayoutSize = NSCollectionLayoutSize(
+//                    widthDimension: .fractionalWidth(1.0),
+//                    heightDimension: .fractionalHeight(1.0)
+//                )
+//                let item: NSCollectionLayoutItem = .init(layoutSize: itemSize)
+//                
+//                let groupSize: NSCollectionLayoutSize = .init(
+//                    widthDimension: .absolute(117),
+//                    heightDimension: .estimated(224)
+//                )
+//                let group: NSCollectionLayoutGroup = .horizontal(
+//                    layoutSize: groupSize,
+//                    subitems: [item]
+//                )
+//                group.contentInsets = .init(top: 0, leading: 7, bottom: 0, trailing: 7)
+//                
+//                let section: NSCollectionLayoutSection = .init(group: group)
+//                section.orthogonalScrollingBehavior = .continuous
+//                section.contentInsets  = .init(top: 20, leading: 26, bottom: 0, trailing: 26)
+//                return section
+//            case .none:
+//                return nil
+//            }
+//        }
+//        
+//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // compositionalLayout 설정
-        collectionView.collectionViewLayout = compositionalLayout
+        //collectionView.collectionViewLayout = compositionalLayout
+        collectionView.collectionViewLayout = createCompositionalLayout()
 
         
         // DiffableDataSource 설정
@@ -159,8 +161,58 @@ class HomeViewController: UIViewController {
         
         dataSource?.apply(snapShot)
     }
+    
+    func createCompositionalLayout() -> UICollectionViewLayout {
+        return UICollectionViewCompositionalLayout { section, _ in
+            switch Section(rawValue: section) {
+            case .banner:
+                let itemSize: NSCollectionLayoutSize = NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1.0),
+                    heightDimension: .fractionalHeight(1.0)
+                )
+                let item: NSCollectionLayoutItem = .init(layoutSize: itemSize)
+                
+                let groupSize: NSCollectionLayoutSize = .init(
+                    widthDimension: .fractionalWidth(1.0),
+                    heightDimension: .fractionalWidth(165 / 393)
+                )
+                let group: NSCollectionLayoutGroup = .horizontal(
+                    layoutSize: groupSize,
+                    subitems: [item]
+                )
+                
+                let section: NSCollectionLayoutSection = .init(group: group)
+                section.orthogonalScrollingBehavior = .groupPaging
+                
+                return section
+            case .horizontalProductItem:
+                let itemSize: NSCollectionLayoutSize = NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(1.0),
+                    heightDimension: .fractionalHeight(1.0)
+                )
+                let item: NSCollectionLayoutItem = .init(layoutSize: itemSize)
+                
+                let groupSize: NSCollectionLayoutSize = .init(
+                    widthDimension: .absolute(117),
+                    heightDimension: .estimated(224)
+                )
+                let group: NSCollectionLayoutGroup = .horizontal(
+                    layoutSize: groupSize,
+                    subitems: [item]
+                )
+                group.contentInsets = .init(top: 0, leading: 7, bottom: 0, trailing: 7)
+                
+                let section: NSCollectionLayoutSection = .init(group: group)
+                section.orthogonalScrollingBehavior = .continuous
+                section.contentInsets  = .init(top: 20, leading: 26, bottom: 0, trailing: 26)
+                return section
+            case .none:
+                return nil
+            }
+        }
+    }
 }
 
-#Preview {
-    UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() as! HomeViewController
-}
+//#Preview {
+//    UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() as! HomeViewController
+//}
