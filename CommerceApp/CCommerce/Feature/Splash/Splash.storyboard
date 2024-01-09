@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="SplashViewController" customModule="CCommerce" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ldd-5J-xje">
+                                <rect key="frame" x="146.66666666666666" y="376" width="100" height="100"/>
+                            </imageView>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpF-V5-56e" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="SplashLottie"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="vpF-V5-56e" secondAttribute="bottom" id="8No-3r-OQN"/>
+                            <constraint firstItem="vpF-V5-56e" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="FI7-es-OrG"/>
+                            <constraint firstItem="Ldd-5J-xje" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Sq7-Md-D8u"/>
+                            <constraint firstItem="Ldd-5J-xje" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Xs8-yp-xxm"/>
+                            <constraint firstItem="vpF-V5-56e" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="dQN-UV-W8Q"/>
+                            <constraint firstAttribute="trailing" secondItem="vpF-V5-56e" secondAttribute="trailing" id="yBS-6s-aof"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="appicon" destination="Ldd-5J-xje" id="2aQ-Dp-zZw"/>
+                        <outlet property="appiconCenterXConstraint" destination="Sq7-Md-D8u" id="co3-0I-dpB"/>
+                        <outlet property="appiconCenterYConstraint" destination="Xs8-yp-xxm" id="on7-G4-2PT"/>
+                        <outlet property="lottieAnimationView" destination="vpF-V5-56e" id="PzS-hr-rsa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="56" y="-28"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="app-icon" width="100" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
