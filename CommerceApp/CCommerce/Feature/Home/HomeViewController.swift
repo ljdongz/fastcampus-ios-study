@@ -25,11 +25,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         bindingViewModel()
-        viewModel.loadData()
-        
         collectionView.collectionViewLayout = createCompositionalLayout()
-
         setDataSource()
+        viewModel.process(action: .loadData)
     }
     
     private func createCompositionalLayout() -> UICollectionViewLayout {
@@ -65,19 +63,19 @@ class HomeViewController: UIViewController {
     private func applySnapShot() {
         var snapShot = NSDiffableDataSourceSnapshot<Section, AnyHashable>()
         
-        if let bannerViewModels = viewModel.bannerViewModels {
+        if let bannerViewModels = viewModel.state.collectionViewModels.bannerViewModels {
             snapShot.appendSections([.banner])
             snapShot.appendItems(bannerViewModels, toSection: .banner )
         }
         
-        if let horizontalProductViewModels = viewModel.horizontalProductViewModels {
+        if let horizontalProductViewModels = viewModel.state.collectionViewModels.horizontalProductViewModels {
             snapShot.appendSections([.horizontalProductItem])
-            snapShot.appendItems(viewModel.horizontalProductViewModels ?? [], toSection: .horizontalProductItem)
+            snapShot.appendItems(horizontalProductViewModels, toSection: .horizontalProductItem)
         }
         
-        if let verticalProductViewModels = viewModel.verticalProductViewModels {
+        if let verticalProductViewModels = viewModel.state.collectionViewModels.verticalProductViewModels {
             snapShot.appendSections([.verticalProductItem])
-            snapShot.appendItems(viewModel.verticalProductViewModels ?? [], toSection: .verticalProductItem)
+            snapShot.appendItems(verticalProductViewModels, toSection: .verticalProductItem)
         }
         
         dataSource?.apply(snapShot)
@@ -119,15 +117,7 @@ class HomeViewController: UIViewController {
     private func bindingViewModel() {
         // Cancellables이 사라지기 전까지 관찰
         // (Cancellables가 사라지는 시기 -> ViewController가 사라질 때)
-        viewModel.$bannerViewModels.receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                self?.applySnapShot()
-            }.store(in: &cancellables)
-        viewModel.$horizontalProductViewModels.receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                self?.applySnapShot()
-            }.store(in: &cancellables)
-        viewModel.$verticalProductViewModels.receive(on: DispatchQueue.main)
+        viewModel.state.$collectionViewModels.receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 self?.applySnapShot()
             }.store(in: &cancellables)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5736A56E2B52719D00010D8A /* Numeric+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736A56D2B52719D00010D8A /* Numeric+Extension.swift */; };
 		57F9168F2B495EE60021331E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F9168E2B495EE60021331E /* AppDelegate.swift */; };
 		57F916912B495EE60021331E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F916902B495EE60021331E /* SceneDelegate.swift */; };
 		57F916982B495EE80021331E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57F916972B495EE80021331E /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5736A56D2B52719D00010D8A /* Numeric+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+Extension.swift"; sourceTree = "<group>"; };
 		57F9168B2B495EE60021331E /* CCommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F9168E2B495EE60021331E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57F916902B495EE60021331E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5736A56C2B52718700010D8A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5736A56D2B52719D00010D8A /* Numeric+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		57F916822B495EE60021331E = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 		57F9168D2B495EE60021331E /* CCommerce */ = {
 			isa = PBXGroup;
 			children = (
+				5736A56C2B52718700010D8A /* Extensions */,
 				57F916BB2B4BEB710021331E /* Delegates */,
 				57F916A92B497D170021331E /* DesignSource */,
 				57F916C12B4D8AD40021331E /* Network */,
@@ -257,6 +268,7 @@
 				57F916B12B49832D0021331E /* CPColor.swift in Sources */,
 				57F916BF2B4D2D660021331E /* HomeProductCollectionViewCell.swift in Sources */,
 				57F9168F2B495EE60021331E /* AppDelegate.swift in Sources */,
+				5736A56E2B52719D00010D8A /* Numeric+Extension.swift in Sources */,
 				57F916B72B4BE7F40021331E /* HomeViewController.swift in Sources */,
 				57F916B32B4984170021331E /* CPFont.swift in Sources */,
 				57F916AD2B497EDE0021331E /* CPImage.swift in Sources */,
