@@ -17,6 +17,8 @@ struct HomeProductCollectionViewCellViewModel: Hashable {
 }
 
 class HomeProductCollectionViewCell: UICollectionViewCell {
+    static let reusableId = "HomeProductCollectionViewCell"
+    
     @IBOutlet weak var productItemImageView: UIImageView!
     @IBOutlet weak var productTitleLabel: UILabel!
     @IBOutlet weak var productReasonDiscountLabel: UILabel!
