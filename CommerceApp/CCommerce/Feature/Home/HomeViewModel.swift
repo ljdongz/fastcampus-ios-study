@@ -25,6 +25,7 @@ class HomeViewModel {
             var couponState: [HomeCouponButtonCollectionViewCellViewModel]?
             var separateLine1ViewModels: [HomeSeparateLineCollectionViewCellViewModel] = [HomeSeparateLineCollectionViewCellViewModel()]
             var separateLine2ViewModels: [HomeSeparateLineCollectionViewCellViewModel] = [HomeSeparateLineCollectionViewCellViewModel()]
+            var themeViewModels: (HomethemeHeaderCollectionReusableViewModel, [HomeThemeCollectionViewCellViewModel])?
         }
         @Published var collectionViewModels = CollectionViewModels()
     }
@@ -89,6 +90,7 @@ extension HomeViewModel {
         Task { await transformBanner(response) }
         Task { await transformHorizontalProduct(response) }
         Task { await transformVerticalProduct(response) }
+        Task { await transformTheme(response) }
     }
     
     // 함수가 종료되었을 시 Main 쓰레드에서 동작할 수 있도록 함
@@ -113,6 +115,14 @@ extension HomeViewModel {
     @MainActor
     private func transformCoupon(_ isDownloaded: Bool) async {
         state.collectionViewModels.couponState = [.init(state: isDownloaded ? .disable : .enable)]
+    }
+    
+    @MainActor
+    private func transformTheme(_ response: HomeResponse) async {
+        let items = response.themes.map {
+            HomeThemeCollectionViewCellViewModel(themeImageUrl: $0.imageUrl)
+        }
+        state.collectionViewModels.themeViewModels = (HomethemeHeaderCollectionReusableViewModel(headerText: "테마관"), items)
     }
     
     
