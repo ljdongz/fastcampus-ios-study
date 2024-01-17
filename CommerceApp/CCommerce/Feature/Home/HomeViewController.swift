@@ -237,7 +237,14 @@ class HomeViewController: UIViewController {
             }.store(in: &cancellables)
     }
     
-   
+    @IBAction func favoriteButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Favorite", bundle: nil)
+        if let vc = storyboard.instantiateInitialViewController() {
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
+    }
+    
 }
 
 #Preview {
