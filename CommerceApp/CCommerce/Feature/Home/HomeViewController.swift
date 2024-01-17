@@ -34,6 +34,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.delegate = self
         bindingViewModel()
         collectionView.collectionViewLayout = createCompositionalLayout()
 //        setDataSource()
@@ -247,6 +248,21 @@ class HomeViewController: UIViewController {
     
 }
 
-#Preview {
-    UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() as! HomeViewController
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch currentSection[indexPath.section] {
+        case .banner:
+            break
+        case .separateLine1, .separateLine2:
+            break
+        case .couponButton:
+            break
+        case .horizontalProductItem, .verticalProductItem:
+            let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+            guard let vc = storyboard.instantiateInitialViewController() as? DetailViewController else { return }
+            navigationController?.pushViewController(vc, animated: true)
+        case .theme:
+            break
+        }
+    }
 }
