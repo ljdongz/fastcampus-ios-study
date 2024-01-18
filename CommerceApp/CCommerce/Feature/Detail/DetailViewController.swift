@@ -45,6 +45,13 @@ class DetailViewController: UIViewController {
                 let vc = OptionViewController()
                 self?.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &cancellables)
+        
+        viewModel.showPurchaseViweController
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                let vc = PurchaseViewController()
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }.store(in: &cancellables)
     }
 
 }

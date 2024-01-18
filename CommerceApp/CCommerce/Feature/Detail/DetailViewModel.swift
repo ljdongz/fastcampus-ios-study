@@ -37,6 +37,7 @@ final class DetailViewModel: ObservableObject {
     @Published private(set) var state = State()
     
     private(set) var showOptionViweController = PassthroughSubject<Void, Never>()
+    private(set) var showPurchaseViweController = PassthroughSubject<Void, Never>()
     private var loadDataTask: Task<Void, Never>?
     private var isFavorite: Bool = false
     private var needShowMore: Bool = true
@@ -64,7 +65,7 @@ final class DetailViewModel: ObservableObject {
             isFavorite.toggle()
             state.purchase = DetailPurchaseViewModel(isFavorite: isFavorite)
         case .didTapPurchase:
-            break
+            showPurchaseViweController.send()
         case .didTapOption:
             showOptionViweController.send()
         }

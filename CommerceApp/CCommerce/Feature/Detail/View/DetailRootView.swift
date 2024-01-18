@@ -71,7 +71,7 @@ struct DetailRootView: View {
                         ) {
                             viewModel.process(.didTapFavorite)
                         } onPurchaseTapped: {
-                            
+                            viewModel.process(.didTapPurchase)
                         }
                         .padding(.horizontal, 10)
                     }
