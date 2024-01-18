@@ -14,22 +14,13 @@ struct PurchaseSelectedItemViewModel {
 
 final class PurchaseSelectedItemView: UIView {
     
-    private lazy var containerStackView: UIStackView = {
-        let view = UIStackView()
-        view.axis = .horizontal
-        view.alignment = .fill
-        view.distribution = .fill
-        view.spacing = 0
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
     private lazy var contentStackView: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
         view.alignment = .fill
         view.distribution = .fill
         view.spacing = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -49,13 +40,7 @@ final class PurchaseSelectedItemView: UIView {
         return view
     }()
     
-    private lazy var spacer: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    private var containerStackViewConstraints: [NSLayoutConstraint]?
+    private var contentStackViewConstraints: [NSLayoutConstraint]?
 
     var viewModel: PurchaseSelectedItemViewModel
     
@@ -73,24 +58,22 @@ final class PurchaseSelectedItemView: UIView {
     
     override func updateConstraints() {
         
-        if containerStackViewConstraints == nil {
+        if contentStackViewConstraints == nil {
             let constraints = [
-                containerStackView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-                containerStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-                containerStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-                containerStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
+                contentStackView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+                contentStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+                contentStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+                contentStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             ]
             NSLayoutConstraint.activate(constraints)
-            containerStackViewConstraints = constraints
+            contentStackViewConstraints = constraints
         }
         
         super.updateConstraints()
     }
     
     private func commonInit() {
-        addSubview(containerStackView)
-        containerStackView.addArrangedSubview(contentStackView)
-        containerStackView.addArrangedSubview(spacer)
+        addSubview(contentStackView)
         contentStackView.addArrangedSubview(titleLabel)
         contentStackView.addArrangedSubview(descriptionLabel)
         
