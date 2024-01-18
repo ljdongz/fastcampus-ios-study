@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Combine
 
 final class DetailViewModel: ObservableObject {
     struct State {
+        var isError: String?
         var isLoading: Bool = true
         var banners: DetailBannerViewModel?
         var rate: DetailRateViewModel?
@@ -29,13 +31,16 @@ final class DetailViewModel: ObservableObject {
         case didTapMore
         case didTapFavorite
         case didTapPurchase
+        case didTapOption
     }
     
     @Published private(set) var state = State()
     
+    private(set) var showOptionViweController = PassthroughSubject<Void, Never>()
     private var loadDataTask: Task<Void, Never>?
     private var isFavorite: Bool = false
     private var needShowMore: Bool = true
+    
     
     func process(_ action: Action) {
         switch action {
@@ -49,7 +54,7 @@ final class DetailViewModel: ObservableObject {
         case .getDataSuccess(let response):
             Task { await transformProductDetailResponse(response) }
         case .getDataFailure(let error):
-            print(error)
+            Task { await getDataFailure(error) }
         case .didTapChangeOption:
             break
         case .didTapMore:
@@ -60,6 +65,8 @@ final class DetailViewModel: ObservableObject {
             state.purchase = DetailPurchaseViewModel(isFavorite: isFavorite)
         case .didTapPurchase:
             break
+        case .didTapOption:
+            showOptionViweController.send()
         }
     }
     
@@ -67,10 +74,6 @@ final class DetailViewModel: ObservableObject {
         loadDataTask?.cancel()
     }
     
-    @MainActor
-    func setIsLoading(_ bool: Bool) async {
-        state.isLoading = bool
-    }
 }
 
 extension DetailViewModel {
@@ -91,6 +94,7 @@ extension DetailViewModel {
     
     @MainActor
     private func transformProductDetailResponse(_ response: ProductDetailResponse) async {
+        state.isError = nil
         state.banners = DetailBannerViewModel(imageUrls: response.bannerImages)
         state.rate = DetailRateViewModel(rate: response.product.rate)
         state.title = response.product.name
@@ -108,5 +112,15 @@ extension DetailViewModel {
         state.mainImageUrls = response.detailImages
         state.more = needShowMore ? DetailMoreViewModel() : nil
         state.purchase = DetailPurchaseViewModel(isFavorite: false)
+    }
+    
+    @MainActor
+    func setIsLoading(_ bool: Bool) async {
+        state.isLoading = bool
+    }
+    
+    @MainActor
+    private func getDataFailure(_ error: Error) {
+        state.isError = "에러가 발생했습니다. \(error.localizedDescription)"
     }
 }

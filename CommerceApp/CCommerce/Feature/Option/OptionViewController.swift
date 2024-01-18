@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  OptionViewController.swift
 //  CCommerce
 //
 //  Created by 이정동 on 1/18/24.
@@ -7,21 +7,17 @@
 
 import UIKit
 import SwiftUI
-import Combine
 
-class DetailViewController: UIViewController {
+final class OptionViewController: UIViewController {
+
+    let viewModel: OptionViewModel = OptionViewModel()
     
-    let viewModel: DetailViewModel = DetailViewModel()
-    
-    lazy var rootView = UIHostingController(rootView: DetailRootView(viewModel: viewModel))
-    
-    private var cancellables = Set<AnyCancellable>()
+    lazy var rootView = UIHostingController(rootView: OptionRootView(viewModel: viewModel))
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         addRootView()
-        bindViewModelAction()
     }
     
 
@@ -36,15 +32,6 @@ class DetailViewController: UIViewController {
             rootView.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             rootView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-    }
-    
-    private func bindViewModelAction() {
-        viewModel.showOptionViweController
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                let vc = OptionViewController()
-                self?.navigationController?.pushViewController(vc, animated: true)
-            }.store(in: &cancellables)
     }
 
 }

@@ -14,58 +14,72 @@ struct DetailRootView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            ScrollView(.vertical) {
-                VStack(spacing: 0) {
-                    bannerView
-                    
-                    rateView
-                    
-                    if let title = viewModel.state.title {
-                        Text(title)
-                    }
-                    
-                    optionView
-                    
-                    Divider()
-                        .padding(.horizontal, 15)
-                    
-                    HStack(spacing: 0) {
-                        Spacer()
-                        Text("옵션 선택하기")
-                            .font(CPFont.SwiftUI.medium12)
-                            .foregroundStyle(Color(.keyColorBlue))
-                    }
-                    .padding(.top, 33)
-                    .padding(.horizontal, 37)
-                    
-                    priceView
-                    
-                    mainImageView
-                    
-                    if let moreViewModel = viewModel.state.more {
-                        DetailMoreView(viewModel: moreViewModel) {
-                            viewModel.process(.didTapMore)
+            if viewModel.state.isLoading {
+                Text("로딩중")
+            } else {
+                if let error = viewModel.state.isError {
+                    Text(error)
+                } else {
+                    ScrollView(.vertical) {
+                        VStack(spacing: 0) {
+                            bannerView
+                            
+                            rateView
+                            
+                            if let title = viewModel.state.title {
+                                Text(title)
+                            }
+                            
+                            optionView
+                            
+                            Divider()
+                                .padding(.horizontal, 15)
+                            
+                            HStack(spacing: 0) {
+                                Spacer()
+                                Button(
+                                    action: {
+                                        viewModel.process(.didTapOption)
+                                    },
+                                    label: {
+                                        Text("옵션 선택하기")
+                                            .font(CPFont.SwiftUI.medium12)
+                                            .foregroundStyle(Color(.keyColorBlue))
+                                })
+                            }
+                            .padding(.top, 33)
+                            .padding(.horizontal, 37)
+                            
+                            priceView
+                            
+                            mainImageView
+                            
+                            if let moreViewModel = viewModel.state.more {
+                                DetailMoreView(viewModel: moreViewModel) {
+                                    viewModel.process(.didTapMore)
+                                }
+                                .padding(.vertical, 10)
+                            }
                         }
-                        .padding(.vertical, 10)
+                    }
+                    
+                    if let purchaseViewModel = viewModel.state.purchase {
+                        DetailPurchaseView(
+                            viewModel: DetailPurchaseViewModel(
+                                isFavorite: purchaseViewModel.isFavorite
+                            )
+                        ) {
+                            viewModel.process(.didTapFavorite)
+                        } onPurchaseTapped: {
+                            
+                        }
+                        .padding(.horizontal, 10)
                     }
                 }
+                
+                
+                
             }
-            
-            
-            
-            if let purchaseViewModel = viewModel.state.purchase {
-                DetailPurchaseView(
-                    viewModel: DetailPurchaseViewModel(
-                        isFavorite: purchaseViewModel.isFavorite
-                    )
-                ) {
-                    viewModel.process(.didTapFavorite)
-                } onPurchaseTapped: {
-                    
-                }
-                .padding(.horizontal, 10)
-            }
-            
             
         }
         .onAppear(perform: {
