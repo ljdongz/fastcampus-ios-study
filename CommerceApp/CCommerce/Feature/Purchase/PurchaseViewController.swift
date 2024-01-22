@@ -40,6 +40,13 @@ final class PurchaseViewController: UIViewController {
                 guard let viewModels = self?.viewModel.state.purchaseItems else { return }
                 self?.rootView.setPurchaseItem(viewModels)
             }.store(in: &cancellables)
+        
+        viewModel.showPaymentViewController
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                let vc = PaymentViewController()
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }.store(in: &cancellables)
     }
     
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5728F8CB2B5EA9B0001D3600 /* PurchaseRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5728F8CA2B5EA9B0001D3600 /* PurchaseRootView.swift */; };
+		5728F8CE2B5ECA37001D3600 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5728F8CD2B5ECA37001D3600 /* PaymentViewController.swift */; };
+		5728F8D02B5ECA45001D3600 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5728F8CF2B5ECA45001D3600 /* PaymentViewModel.swift */; };
 		5736A56E2B52719D00010D8A /* Numeric+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736A56D2B52719D00010D8A /* Numeric+Extension.swift */; };
 		5736A5722B53939A00010D8A /* HomeCouponButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736A5712B53939A00010D8A /* HomeCouponButtonCollectionViewCell.swift */; };
 		5736A5742B53A97700010D8A /* HomeSeparateLineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736A5732B53A97700010D8A /* HomeSeparateLineCollectionViewCell.swift */; };
@@ -61,6 +63,8 @@
 
 /* Begin PBXFileReference section */
 		5728F8CA2B5EA9B0001D3600 /* PurchaseRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseRootView.swift; sourceTree = "<group>"; };
+		5728F8CD2B5ECA37001D3600 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		5728F8CF2B5ECA45001D3600 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 		5736A56D2B52719D00010D8A /* Numeric+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+Extension.swift"; sourceTree = "<group>"; };
 		5736A5712B53939A00010D8A /* HomeCouponButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCouponButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		5736A5732B53A97700010D8A /* HomeSeparateLineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSeparateLineCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -131,6 +135,15 @@
 				5728F8CA2B5EA9B0001D3600 /* PurchaseRootView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5728F8CC2B5ECA28001D3600 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				5728F8CD2B5ECA37001D3600 /* PaymentViewController.swift */,
+				5728F8CF2B5ECA45001D3600 /* PaymentViewModel.swift */,
+			);
+			path = Payment;
 			sourceTree = "<group>";
 		};
 		5736A56C2B52718700010D8A /* Extensions */ = {
@@ -259,6 +272,7 @@
 				5736A5B92B5804FE00010D8A /* Detail */,
 				5736A5D12B58B9DC00010D8A /* Option */,
 				5736A5D82B58BD9600010D8A /* Purchase */,
+				5728F8CC2B5ECA28001D3600 /* Payment */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -428,6 +442,8 @@
 				5736A5C42B580AF400010D8A /* DetailRateView.swift in Sources */,
 				5736A5C02B58064A00010D8A /* ProductDetailResponse.swift in Sources */,
 				5736A5722B53939A00010D8A /* HomeCouponButtonCollectionViewCell.swift in Sources */,
+				5728F8D02B5ECA45001D3600 /* PaymentViewModel.swift in Sources */,
+				5728F8CE2B5ECA37001D3600 /* PaymentViewController.swift in Sources */,
 				57F916B72B4BE7F40021331E /* HomeViewController.swift in Sources */,
 				5736A5B62B57C69A00010D8A /* PurchaseButton.swift in Sources */,
 				57F916B32B4984170021331E /* CPFont.swift in Sources */,
