@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5728F8CB2B5EA9B0001D3600 /* PurchaseRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5728F8CA2B5EA9B0001D3600 /* PurchaseRootView.swift */; };
 		5736A56E2B52719D00010D8A /* Numeric+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736A56D2B52719D00010D8A /* Numeric+Extension.swift */; };
 		5736A5722B53939A00010D8A /* HomeCouponButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736A5712B53939A00010D8A /* HomeCouponButtonCollectionViewCell.swift */; };
 		5736A5742B53A97700010D8A /* HomeSeparateLineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736A5732B53A97700010D8A /* HomeSeparateLineCollectionViewCell.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5728F8CA2B5EA9B0001D3600 /* PurchaseRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseRootView.swift; sourceTree = "<group>"; };
 		5736A56D2B52719D00010D8A /* Numeric+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+Extension.swift"; sourceTree = "<group>"; };
 		5736A5712B53939A00010D8A /* HomeCouponButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCouponButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		5736A5732B53A97700010D8A /* HomeSeparateLineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSeparateLineCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5728F8C92B5EA98C001D3600 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5728F8CA2B5EA9B0001D3600 /* PurchaseRootView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5736A56C2B52718700010D8A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +199,7 @@
 		5736A5D82B58BD9600010D8A /* Purchase */ = {
 			isa = PBXGroup;
 			children = (
+				5728F8C92B5EA98C001D3600 /* View */,
 				5736A5D92B58BDAB00010D8A /* PurchaseViewController.swift */,
 				5736A5DB2B58BDB400010D8A /* PurchaseViewModel.swift */,
 				5736A5DE2B58C29E00010D8A /* PurchaseSelectedItemView.swift */,
@@ -401,6 +412,7 @@
 				5736A5D02B58287000010D8A /* DetailViewController.swift in Sources */,
 				57F916C32B4D8AE40021331E /* NetworkService.swift in Sources */,
 				57F916B12B49832D0021331E /* CPColor.swift in Sources */,
+				5728F8CB2B5EA9B0001D3600 /* PurchaseRootView.swift in Sources */,
 				5736A5DA2B58BDAB00010D8A /* PurchaseViewController.swift in Sources */,
 				5736A5D32B58B9FB00010D8A /* OptionViewController.swift in Sources */,
 				5736A5DF2B58C29E00010D8A /* PurchaseSelectedItemView.swift in Sources */,
