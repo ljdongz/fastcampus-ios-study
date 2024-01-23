@@ -28,6 +28,7 @@ class HomeViewModel {
             var themeViewModels: (HomethemeHeaderCollectionReusableViewModel, [HomeThemeCollectionViewCellViewModel])?
         }
         @Published var collectionViewModels = CollectionViewModels()
+        @Published var sort: [String] = []
     }
     
     private(set) var state = State()
@@ -65,6 +66,8 @@ extension HomeViewModel {
     private func loadData() {
         loadDataTask = Task {
             do {
+                state.sort = try loadJson()
+                
                 let response = try await NetworkService.shared.getHomeData()
                 process(action: .getDataSuccess(response))
             } catch {
@@ -72,6 +75,20 @@ extension HomeViewModel {
                 print("Network Error: \(error)")
             }
         }
+    }
+    
+    private func loadJson() throws -> [String] {
+        guard let url = Bundle.main.url(forResource: "sort", withExtension: "json") else { return [] }
+        
+        let data = try Data(contentsOf: url)
+        let decoder = JSONDecoder()
+        
+        struct SortJson: Decodable {
+            let sort: [String]
+        }
+        
+        let jsonData = try decoder.decode(SortJson.self, from: data)
+        return jsonData.sort
     }
     
     private func loadCoupon() {

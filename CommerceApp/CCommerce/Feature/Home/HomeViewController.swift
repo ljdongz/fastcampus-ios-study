@@ -103,43 +103,74 @@ class HomeViewController: UIViewController {
     private func applySnapShot() {
         var snapShot = SnapShot()
         
-        if let bannerViewModels = viewModel.state.collectionViewModels.bannerViewModels {
-            snapShot.appendSections([.banner])
-            snapShot.appendItems(bannerViewModels, toSection: .banner )
+        func setTheme() {
+            if let themeViewModels = viewModel.state.collectionViewModels.themeViewModels?.1 {
+                snapShot.appendSections([.separateLine2])
+                snapShot.appendItems(
+                    viewModel.state.collectionViewModels.separateLine1ViewModels,
+                    toSection: .separateLine2
+                )
+                snapShot.appendSections([.theme])
+                snapShot.appendItems(themeViewModels, toSection: .theme)
+            }
         }
         
-        if let horizontalProductViewModels = viewModel.state.collectionViewModels.horizontalProductViewModels {
-            snapShot.appendSections([.horizontalProductItem])
-            snapShot.appendItems(horizontalProductViewModels, toSection: .horizontalProductItem)
-            snapShot.appendSections([.separateLine1])
-            snapShot.appendItems(
-                viewModel.state.collectionViewModels.separateLine1ViewModels,
-                toSection: .separateLine1
-            )
+        func setVerticalProduct() {
+            if let verticalProductViewModels = viewModel.state.collectionViewModels.verticalProductViewModels {
+                snapShot.appendSections([.verticalProductItem])
+                snapShot.appendItems(verticalProductViewModels, toSection: .verticalProductItem)
+            }
         }
         
-        if let couponButtonViewModels = viewModel.state.collectionViewModels.couponState {
-            
-            snapShot.appendSections([.couponButton])
-            snapShot.appendItems(couponButtonViewModels, toSection: .couponButton)
+        func setCoupon() {
+            if let couponButtonViewModels = viewModel.state.collectionViewModels.couponState {
+                
+                snapShot.appendSections([.couponButton])
+                snapShot.appendItems(couponButtonViewModels, toSection: .couponButton)
+            }
         }
         
-        if let verticalProductViewModels = viewModel.state.collectionViewModels.verticalProductViewModels {
-            snapShot.appendSections([.verticalProductItem])
-            snapShot.appendItems(verticalProductViewModels, toSection: .verticalProductItem)
+        func setHorizontalProduct() {
+            if let horizontalProductViewModels = viewModel.state.collectionViewModels.horizontalProductViewModels {
+                snapShot.appendSections([.horizontalProductItem])
+                snapShot.appendItems(horizontalProductViewModels, toSection: .horizontalProductItem)
+                snapShot.appendSections([.separateLine1])
+                snapShot.appendItems(
+                    viewModel.state.collectionViewModels.separateLine1ViewModels,
+                    toSection: .separateLine1
+                )
+            }
         }
         
-        if let themeViewModels = viewModel.state.collectionViewModels.themeViewModels?.1 {
-            snapShot.appendSections([.separateLine2])
-            snapShot.appendItems(
-                viewModel.state.collectionViewModels.separateLine1ViewModels,
-                toSection: .separateLine2
-            )
-            snapShot.appendSections([.theme])
-            snapShot.appendItems(themeViewModels, toSection: .theme)
+        func setBanner() {
+            if let bannerViewModels = viewModel.state.collectionViewModels.bannerViewModels {
+                snapShot.appendSections([.banner])
+                snapShot.appendItems(bannerViewModels, toSection: .banner )
+            }
+        }
+        
+        viewModel.state.sort.forEach {
+            switch $0 {
+            case "banner":
+                setBanner()
+            case "horizontal":
+                setHorizontalProduct()
+            case "coupon":
+                setCoupon()
+            case "vertical":
+                setVerticalProduct()
+            case "theme":
+                setTheme()
+            default:
+                break
+            }
         }
         
         dataSource.apply(snapShot)
+    }
+    
+    private func setTheme(_ snapShot: SnapShot) {
+        
     }
     
     private func bannerCell(

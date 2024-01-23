@@ -10,6 +10,7 @@
 		5728F8CB2B5EA9B0001D3600 /* PurchaseRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5728F8CA2B5EA9B0001D3600 /* PurchaseRootView.swift */; };
 		5728F8CE2B5ECA37001D3600 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5728F8CD2B5ECA37001D3600 /* PaymentViewController.swift */; };
 		5728F8D02B5ECA45001D3600 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5728F8CF2B5ECA45001D3600 /* PaymentViewModel.swift */; };
+		5728F8D42B5FA8A7001D3600 /* sort.json in Resources */ = {isa = PBXBuildFile; fileRef = 5728F8D32B5FA8A6001D3600 /* sort.json */; };
 		5736A56E2B52719D00010D8A /* Numeric+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736A56D2B52719D00010D8A /* Numeric+Extension.swift */; };
 		5736A5722B53939A00010D8A /* HomeCouponButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736A5712B53939A00010D8A /* HomeCouponButtonCollectionViewCell.swift */; };
 		5736A5742B53A97700010D8A /* HomeSeparateLineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5736A5732B53A97700010D8A /* HomeSeparateLineCollectionViewCell.swift */; };
@@ -65,6 +66,7 @@
 		5728F8CA2B5EA9B0001D3600 /* PurchaseRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseRootView.swift; sourceTree = "<group>"; };
 		5728F8CD2B5ECA37001D3600 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		5728F8CF2B5ECA45001D3600 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
+		5728F8D32B5FA8A6001D3600 /* sort.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sort.json; sourceTree = "<group>"; };
 		5736A56D2B52719D00010D8A /* Numeric+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+Extension.swift"; sourceTree = "<group>"; };
 		5736A5712B53939A00010D8A /* HomeCouponButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCouponButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		5736A5732B53A97700010D8A /* HomeSeparateLineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSeparateLineCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				57F916AC2B497EDE0021331E /* CPImage.swift */,
 				57F916B02B49832D0021331E /* CPColor.swift */,
 				57F916B22B4984170021331E /* CPFont.swift */,
+				5728F8D32B5FA8A6001D3600 /* sort.json */,
 			);
 			path = DesignSource;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57F916B52B4BE7E30021331E /* Home.storyboard in Resources */,
+				5728F8D42B5FA8A7001D3600 /* sort.json in Resources */,
 				57F9169B2B495EE80021331E /* LaunchScreen.storyboard in Resources */,
 				5736A5AD2B57C12900010D8A /* Favorite.storyboard in Resources */,
 				5736A5CE2B58285B00010D8A /* Detail.storyboard in Resources */,
