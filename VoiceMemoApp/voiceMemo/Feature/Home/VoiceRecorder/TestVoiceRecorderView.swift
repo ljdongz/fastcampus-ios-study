@@ -155,7 +155,7 @@ private struct VoiceRecorderListCellView: View {
                     .foregroundStyle(Color.customGray2)
                     
                     // 선택한 음성메모 화면
-                    if voiceRecorderViewModel.selectedRecoredFile == recordedFile {
+                    VStack {
                         // 프로그래스 바
                         ProgressBar(progress: progress)
                             .frame(height: 2)
@@ -216,9 +216,14 @@ private struct VoiceRecorderListCellView: View {
                             .padding(.trailing, 20)
                         }
                     }
+                    .frame(maxWidth: .infinity, minHeight: 0, maxHeight: recordedFile == voiceRecorderViewModel.selectedRecoredFile ? .none : 0)
+                    .clipped()
                 }
                 .padding(.horizontal, 20)
             })
+        .clipped()
+        .animation(.easeIn)
+        .transition(.identity)
         Divider()
     }
 }

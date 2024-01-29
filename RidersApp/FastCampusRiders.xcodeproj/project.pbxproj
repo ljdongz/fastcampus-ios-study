@@ -142,7 +142,8 @@
 				C303694F2B2877EB0079B372 /* InProgressOrderListDelegate.swift */,
 				C30369512B28785A0079B372 /* CompletedOrderListDelegate.swift */,
 			);
-			path = Delegate;
+			name = Delegate;
+			path = OrderList/Delegate;
 			sourceTree = "<group>";
 		};
 		C30369572B2882580079B372 /* Delegate */ = {
